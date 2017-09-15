@@ -2,7 +2,9 @@ var planetsArray = ['tatooine', 'hoth', 'endor', 'alderaan', 'naboo', 'jakku'];
 
 var isMatch = false;
 
-var chosenWord = planetsArray[4];
+var clicks = 0;
+
+var chosenWord = planetsArray[0];
 
 var dash = [];
 
@@ -21,26 +23,32 @@ function display () {
 }
 
 $('p').one('click', function (event) {
+	clicks++;
 	var chosenLetter = $(this).attr('id');
 	console.log(chosenLetter);
-	var remainingLetters = chosenWord.length;
 	for (var i = 0; i < chosenWord.length; i++) {
 	if (chosenLetter === chosenWord[i]) {
 		isMatch = true;
-		console.log(remainingLetters);
 		var position = i;
 		dash[i] = chosenLetter;
 		display();
-		if (remainingLetters === 0) {
-		console.log('You won!');
-	}
 	} else {
 		isMatch  = false;
 		console.log('That letter is not in the word');
 		//Hangman stuff
 	}
+
 }
 
-	
+if ($('.word-container').html() === chosenWord) {
+		alert('You won!');
+
+}	
+
+console.log(clicks);
+if (clicks >= 10) {
+	alert('You lost');
+}
+
 });
 

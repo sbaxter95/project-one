@@ -1,0 +1,41 @@
+body {
+	font-family: 'Space Mono', monospace;
+}
+
+.word-container {
+	font-size: 2em;
+	text-align: center;
+	height: 20px;
+	margin-bottom: 50px;
+}
+
+p {
+	display: inline-block;
+	font-size: 1.5em;
+	margin-left: 10px;
+	margin-right: 10px;
+	width: 50px;
+	height: 40px;
+	background-color: grey;
+	text-align: center;
+	cursor: pointer;
+}
+
+.letter-container {
+	width: 30%;
+	height: 400px;
+	margin-top: 50px;
+	margin-left: 20px;
+	display: inline-block;
+}
+
+.hangman-container {
+	display: inline-block;
+	width: 30%;
+	height: 400px;
+	margin-right: 20px;
+}
+
+p:hover {
+	background-color: #ffef00;
+}
