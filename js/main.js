@@ -15,5 +15,5 @@ for (var i = 0; i < chosenWord.length; i++) {
 $('.word-container').html(dash);
 
 $('p').click(function (event) {
-	console.log($(this).val());
+	console.log($(this).attr('id'));
 });
