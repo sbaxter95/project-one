@@ -1,6 +1,6 @@
 var planetsArray = ['tatooine', 'hoth', 'endor', 'alderaan', 'naboo', 'jakku'];
 
-var chosenWord = planetsArray[0];
+var chosenWord = planetsArray[1];
 
 var dash = "";
 
@@ -13,3 +13,7 @@ for (var i = 0; i < chosenWord.length; i++) {
 }
 
 $('.word-container').html(dash);
+
+$('p').click(function (event) {
+	console.log($(this).val());
+});
