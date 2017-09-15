@@ -1,5 +1,7 @@
 var planetsArray = ['tatooine', 'hoth', 'endor', 'alderaan', 'naboo', 'jakku'];
 
+var isMatch = false;
+
 var chosenWord = planetsArray[1];
 
 var dash = "";
@@ -15,5 +17,14 @@ for (var i = 0; i < chosenWord.length; i++) {
 $('.word-container').html(dash);
 
 $('p').click(function (event) {
-	console.log($(this).attr('id'));
+	var chosenLetter = $(this).attr('id');
+	console.log(chosenLetter);
+	for (var i = 0; i < chosenWord.length; i++) {
+	if (chosenLetter === chosenWord[i]) {
+		isMatch = true;
+		console.log(isMatch);
+	}
+}
+	
 });
+
