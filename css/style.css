@@ -22,18 +22,18 @@ p {
 }
 
 .letter-container {
-	width: 30%;
+	width: 55%;
 	height: 400px;
 	margin-top: 50px;
-	margin-left: 20px;
+	margin-left: 10px;
 	display: inline-block;
 }
 
 .hangman-container {
 	display: inline-block;
-	width: 30%;
+	width: 40%;
 	height: 400px;
-	margin-right: 20px;
+	margin-right: 10px;
 }
 
 p:hover {
