@@ -4,7 +4,7 @@ var isMatch = false;
 
 var clicks = 0;
 
-var chosenWord = planetsArray[0];
+var chosenWord = planetsArray[3];
 
 var dash = [];
 
@@ -35,19 +35,20 @@ $('p').one('click', function (event) {
 	} else {
 		isMatch  = false;
 		console.log('That letter is not in the word');
+		// $('.used-letters').html(chosenLetter);
 		//Hangman stuff
 	}
 
 }
 
 if ($('.word-container').html() === chosenWord) {
-		alert('You won!');
+		$('.result-container').html('You won!');
 
 }	
 
 console.log(clicks);
 if (clicks >= 10) {
-	alert('You lost');
+	$('.result-container').html('You lost');
 }
 
 });

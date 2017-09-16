@@ -39,3 +39,15 @@ p {
 p:hover {
 	background-color: #ffef00;
 }
+
+.result-container {
+	text-align: center;
+	margin-top: 20px;
+	font-size: 2em;
+}
+
+.used-letters {
+	position: relative;
+	vertical-align: bottom;
+	text-decoration: line-through;
+}
