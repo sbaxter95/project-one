@@ -29,13 +29,15 @@ $('p').one('click', function (event) {
 	for (var i = 0; i < chosenWord.length; i++) {
 	if (chosenLetter === chosenWord[i]) {
 		isMatch = true;
+		$(this).addClass('right-letter');
+		$(this).fadeOut(1000);
 		var position = i;
 		dash[i] = chosenLetter;
 		display();
 	} else {
 		isMatch  = false;
-		console.log('That letter is not in the word');
-		// $('.used-letters').html(chosenLetter);
+		$(this).addClass('wrong-letter');
+		$(this).fadeOut(1000);
 		//Hangman stuff
 	}
 
@@ -43,8 +45,7 @@ $('p').one('click', function (event) {
 
 if ($('.word-container').html() === chosenWord) {
 		$('.result-container').html('You won!');
-
-}	
+}
 
 console.log(clicks);
 if (clicks >= 10) {
@@ -52,4 +53,3 @@ if (clicks >= 10) {
 }
 
 });
-

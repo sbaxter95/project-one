@@ -46,8 +46,10 @@ p:hover {
 	font-size: 2em;
 }
 
-.used-letters {
-	position: relative;
-	vertical-align: bottom;
-	text-decoration: line-through;
+.wrong-letter {
+	background-color: red;
+}
+
+.right-letter {
+	background-color: green;
 }
