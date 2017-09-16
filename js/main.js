@@ -8,6 +8,10 @@ var chosenWord = planetsArray[3];
 
 var dash = [];
 
+var badGuesses = [];
+
+var wrongLetters = 0;
+
 for (var i = 0; i < chosenWord.length; i++) {
 	if (chosenWord.charAt(i) === " ") {
 		dash.push (" ");
@@ -20,6 +24,15 @@ display();
 
 function display () {
 	$('.word-container').html(dash);
+}
+
+function draw (wrongLetters) {
+	var canvas = document.getElementById('stage'); 
+	var ctx = canvas.getContext('2d');
+	if (wrongLetters === 1) {
+	        ctx.rect(20,20,150,100);
+			ctx.stroke();
+    	}
 }
 
 $('p').one('click', function (event) {
@@ -36,18 +49,21 @@ $('p').one('click', function (event) {
 		display();
 	} else {
 		isMatch  = false;
+		badGuesses.push(chosenLetter);
+		if (badGuesses.length === chosenWord.length) {
+			wrongLetters++;
+		}
 		$(this).addClass('wrong-letter');
 		$(this).fadeOut(1000);
-		//Hangman stuff
+		draw(wrongLetters);
 	}
-
 }
 
 if ($('.word-container').html() === chosenWord) {
 		$('.result-container').html('You won!');
 }
 
-console.log(clicks);
+// console.log(clicks);
 if (clicks >= 10) {
 	$('.result-container').html('You lost');
 }
