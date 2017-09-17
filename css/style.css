@@ -53,3 +53,25 @@ p:hover {
 .right-letter {
 	background-color: green;
 }
+
+img {
+	width: 200px;
+	height: 200px;
+}
+
+#torso {
+	position: absolute;
+	top: 140px;
+}
+
+.show {
+	visibility: visible;
+}
+
+.hide {
+	display: none;
+}
+
+#robot {
+	margin-left: 100px;
+}

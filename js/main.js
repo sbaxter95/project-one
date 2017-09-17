@@ -27,11 +27,8 @@ function display () {
 }
 
 function draw (wrongLetters) {
-	var canvas = document.getElementById('stage'); 
-	var ctx = canvas.getContext('2d');
 	if (wrongLetters === 1) {
-	        ctx.rect(20,20,150,100);
-			ctx.stroke();
+	        
     	}
 }
 
