@@ -32,7 +32,7 @@ p {
 .hangman-container {
 	display: inline-block;
 	width: 40%;
-	height: 400px;
+	height: 500px;
 	margin-right: 10px;
 }
 
@@ -62,16 +62,61 @@ img {
 #torso {
 	position: absolute;
 	top: 140px;
+	z-index: 2;
 }
 
-.show {
-	visibility: visible;
+#left-arm {
+	position: absolute;
+	left: 40px;
+	top: 140px;
+	z-index: 1;
 }
 
-.hide {
-	display: none;
+#right-arm {
+	position: absolute;
+	right: 220px;
+	top: 140px;
+	height: 250px;
+	width: 250px;
+}
+
+#left-leg {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 75px;
+	top: 275px;
+}
+
+#right-leg {
+	position: absolute;
+	right: 420px;
+	width: 100px;
+	height: 100px;
+	top: 275px;
 }
 
 #robot {
 	margin-left: 100px;
+	width: 400px;
+	height: 500px;
+	padding-top: 10px;
+}
+
+#gallows-1 {
+	position: absolute;
+	top: 375px;
+	left: 40px;
+}
+
+#gallows-2 {
+	position: absolute;
+	left: 5px;
+}
+
+#gallows-3 {
+	position: absolute;
+	vertical-align: top;
+	margin-top: -85px;
+	margin-left: 60px;
 }
