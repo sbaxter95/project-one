@@ -120,3 +120,11 @@ img {
 	margin-top: -85px;
 	margin-left: 60px;
 }
+
+.hide {
+	visibility: hidden;
+}
+
+.show {
+	visibility: visible;
+}
