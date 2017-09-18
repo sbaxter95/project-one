@@ -1,9 +1,12 @@
-var words = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
+var robotWords = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
+var robotTypes = ['industrial', 'domestic', 'space', 'military', 'service', 'medical'];
+var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'optimus prime', 'r2d2'];
 
 var badGuesses = 0;
 
-chosenWord = words[2].split('');
-console.log(chosenWord);
+var score = 0;
+
+chosenWord = robotWords[2].split('');
 
 drawDashes();
 
@@ -39,7 +42,21 @@ function draw (wrongLetters) {
     } if (wrongLetters === 9) {
     	$('#right-leg').addClass('show');
     	$('.result-container').html('You lost');
+    	$('result-container').html(score);
     }
+}
+
+function checkWinner() {
+	if ($('.blank').html() === chosenWord) {
+		$('.result-container').html('You won!');
+		score++;
+		$('result-container').html(score);
+	}
+}
+
+function wrongLetter() {
+	badGuesses++;
+	draw(badGuesses);
 }
 
 $('p').one('click', function (event) {
@@ -48,13 +65,11 @@ $('p').one('click', function (event) {
 			var content = $(this).attr('id');
 			if (content === chosenWord[i]) {
 				$('.blank').eq(i).html(content);
+				$('.blank').eq(i).addClass('match');
 			}
 		}
-		if ($('.blank').html() === chosenWord) {
-			$('.result-container').html('You won!');
-		}
+		checkWinner();
 	} else {
-		badGuesses++;
-		draw(badGuesses);
+		wrongLetter();
 	}
 });

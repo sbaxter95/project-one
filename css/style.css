@@ -11,12 +11,12 @@ body {
 
 p {
 	display: inline-block;
-	font-size: 1.5em;
 	margin-left: 10px;
 	margin-right: 10px;
-	width: 50px;
-	height: 40px;
-	background-color: grey;
+	width: 100px;
+	height: 30px;
+	background-color: #cfc9c7;
+	border-radius: 5px;
 	text-align: center;
 	cursor: pointer;
 }
@@ -37,7 +37,7 @@ p {
 }
 
 p:hover {
-	background-color: #ffef00;
+	background-color: white;
 }
 
 .result-container {
@@ -74,7 +74,7 @@ img {
 
 #right-arm {
 	position: absolute;
-	right: 200px;
+	right: 220px;
 	top: 160px;
 	height: 250px;
 	width: 250px;
@@ -135,12 +135,6 @@ img {
 	margin-right: 10px;
 }
 
-.card-block {
-	border: 20px solid #a29f9e;
-	border-radius: 5px;
-	background-color: #a29f9e;
-}
+.match {
 
-.card {
-	margin-left: -5px;
 }
