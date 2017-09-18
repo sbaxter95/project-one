@@ -82,3 +82,13 @@ $('p').one('click', function (event) {
 $('button').click(function (event){
 	location.reload();
 });
+
+$('.play-button').click(function (event){
+	document.location.href = '../index.html';
+})
+
+// document.addEventListener('keydown', function(event) {
+// 	if (event.keyCode === 65) {
+		
+// 	}
+// });
