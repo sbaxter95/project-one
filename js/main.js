@@ -50,6 +50,9 @@ $('p').one('click', function (event) {
 				$('.blank').eq(i).html(content);
 			}
 		}
+		if ($('.blank').html() === chosenWord) {
+			$('.result-container').html('You won!');
+		}
 	} else {
 		badGuesses++;
 		draw(badGuesses);

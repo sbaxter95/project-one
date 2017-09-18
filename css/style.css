@@ -22,7 +22,7 @@ p {
 }
 
 .letter-container {
-	width: 55%;
+	width: 400px;
 	height: 400px;
 	margin-top: 50px;
 	margin-left: 10px;
@@ -31,7 +31,7 @@ p {
 
 .hangman-container {
 	display: inline-block;
-	width: 40%;
+	width: 400px;
 	height: 500px;
 	margin-right: 10px;
 }
@@ -61,21 +61,21 @@ img {
 
 #torso {
 	position: absolute;
-	top: 140px;
+	top: 160px;
 	z-index: 2;
 }
 
 #left-arm {
 	position: absolute;
 	left: 40px;
-	top: 140px;
+	top: 160px;
 	z-index: 1;
 }
 
 #right-arm {
 	position: absolute;
-	right: 220px;
-	top: 140px;
+	right: 200px;
+	top: 160px;
 	height: 250px;
 	width: 250px;
 }
@@ -133,4 +133,14 @@ img {
 	display: inline-block;
 	margin-left: 10px;
 	margin-right: 10px;
+}
+
+.card-block {
+	border: 20px solid #a29f9e;
+	border-radius: 5px;
+	background-color: #a29f9e;
+}
+
+.card {
+	margin-left: -5px;
 }
