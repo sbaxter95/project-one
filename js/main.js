@@ -16,7 +16,7 @@ function drawDashes(chosenWord) {
 	}
 }
 
-function draw (badGuesses) {
+function drawHangman (badGuesses) {
 	if (badGuesses === 1) {
 	        $('#gallows-1').addClass('show');
     	}
@@ -56,7 +56,7 @@ function checkWinner() {
 
 function wrongLetter() {
 	badGuesses++;
-	draw(badGuesses);
+	drawHangman(badGuesses);
 }
 
 function getRandomWord() {
