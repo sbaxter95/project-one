@@ -54,6 +54,8 @@ function checkWinner() {
 }
 
 function wrongLetter() {
+	$(this).addClass('wrong-letter');
+	$(this).fadeOut(1000);
 	badGuesses++;
 	drawHangman(badGuesses);
 }
@@ -71,6 +73,8 @@ $('p').one('click', function (event) {
 			if (content === chosenWord[i]) {
 				$('.blank').eq(i).html(content);
 				$('.blank').eq(i).addClass('match');
+				$(this).addClass('right-letter');
+				$(this).fadeOut(1000);
 			}
 		}
 		checkWinner();
@@ -89,6 +93,6 @@ $('.play-button').click(function (event){
 
 // document.addEventListener('keydown', function(event) {
 // 	if (event.keyCode === 65) {
-		
+
 // 	}
 // });
