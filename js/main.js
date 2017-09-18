@@ -68,8 +68,8 @@ $('p').one('click', function (event) {
 			var position = i;
 			dash[i] = chosenLetter;
 			display();
-		} else if (goodGuess !== true) {
-				return isMatch = false;
+		} else {
+				isMatch = false;
 			}
 			// isMatch = false;
 			// badGuesses.push(chosenLetter);
@@ -89,6 +89,10 @@ if ($('.word-container').html() === chosenWord) {
 
 if (isMatch === false) {
 	wrongLetters++;
+	badGuesses.push(chosenLetter);
+	badGuesses.toString();
+	badGuesses = badGuesses.split(" ");
+	console.log(badGuesses);
 	draw(wrongLetters);
 }
 
