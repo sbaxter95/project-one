@@ -6,40 +6,40 @@ var badGuesses = 0;
 
 var score = 0;
 
-chosenWord = robotWords[2].split('');
+var chosenWord = getRandomWord();
 
-drawDashes();
+drawDashes(chosenWord);
 
-function drawDashes() {
+function drawDashes(chosenWord) {
 	for (var i = 0; i < chosenWord.length; i++) {
 		$('.word-container').append('<div class="blank"> _ </div>')
 	}
 }
 
-function draw (wrongLetters) {
-	if (wrongLetters === 1) {
+function draw (badGuesses) {
+	if (badGuesses === 1) {
 	        $('#gallows-1').addClass('show');
     	}
-    if (wrongLetters === 2) {
+    if (badGuesses === 2) {
     	$('#gallows-2').addClass('show');
     } 
-    if (wrongLetters === 3) {
+    if (badGuesses === 3) {
     	$('#gallows-3').addClass('show');
     } 
-    if (wrongLetters === 4) {
+    if (badGuesses === 4) {
     	$('#head').addClass('show');
     }
-    if (wrongLetters === 5) {
+    if (badGuesses === 5) {
     	$('#torso').addClass('show');
     }
-    if (wrongLetters === 6) {
+    if (badGuesses === 6) {
     	$('#left-arm').addClass('show');
     }
-    if (wrongLetters === 7) {
+    if (badGuesses === 7) {
     	$('#right-arm').addClass('show');
-    } if (wrongLetters === 8) {
+    } if (badGuesses === 8) {
     	$('#left-leg').addClass('show');
-    } if (wrongLetters === 9) {
+    } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
     	$('.result-container').html('You lost');
     	$('result-container').html(score);
@@ -57,6 +57,12 @@ function checkWinner() {
 function wrongLetter() {
 	badGuesses++;
 	draw(badGuesses);
+}
+
+function getRandomWord() {
+	var randomIndex = Math.floor(Math.random() * 6) + 1;
+	var chosenWord = robotWords[randomIndex].split('');
+	return chosenWord;  
 }
 
 $('p').one('click', function (event) {
