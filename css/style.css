@@ -129,10 +129,8 @@ img {
 	visibility: visible;
 }
 
-.matched {
-
-}
-
-.not-matched {
-	
+.blank {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
 }

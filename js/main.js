@@ -1,31 +1,16 @@
-var planetsArray = ['tatooine', 'hoth', 'endor', 'alderaan', 'naboo', 'jakku'];
+var words = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
 
-var isMatch = false;
+var badGuesses = 0;
 
-var clicks = 0;
+chosenWord = words[2].split('');
+console.log(chosenWord);
 
-var chosenWord = planetsArray[3];
+drawDashes();
 
-var dash = [];
-
-var badGuesses = [];
-
-var goodGuesses = 0;
-
-var wrongLetters = 0;
-
-for (var i = 0; i < chosenWord.length; i++) {
-	if (chosenWord.charAt(i) === " ") {
-		dash.push (" ");
-	} else {
-		dash.push(" _ ");
+function drawDashes() {
+	for (var i = 0; i < chosenWord.length; i++) {
+		$('.word-container').append('<div class="blank"> _ </div>')
 	}
-}
-
-display();
-
-function display () {
-	$('.word-container').html(dash);
 }
 
 function draw (wrongLetters) {
@@ -58,37 +43,15 @@ function draw (wrongLetters) {
 }
 
 $('p').one('click', function (event) {
-	clicks++;
-	var chosenLetter = $(this).attr('id');
-	for (var i = 0; i < chosenWord.length; i++) {
-		if (chosenLetter === chosenWord[i]) {
-			$(this).addClass('right-letter');
-			$(this).fadeOut(1000);
-			var position = i;
-			dash[i] = chosenLetter;
-			display();
-			isMatch = true;
-			$('#isMatched').addClass('matched');
-			return
-			goodGuesses++;
-		} else {
-				isMatch = false;
-				$('#isMatched').addClass('not-matched');
-			}
+	if (chosenWord.includes($(this).attr('id'))) {
+		for (var i = 0; i < chosenWord.length; i++) {
+			// dash[i] = $(this).attr('id');
+			var content = $(this).attr('id')
+			$('.word-container').append('<div>' + content + '</div>') 
 
-			$(this).addClass('wrong-letter');
-			$(this).fadeOut(1000);
-	}
-
-	if ($('.word-container').html() === chosenWord) {
-		$('.result-container').html('You won!');
-	}
-
-	if ($('#isMatched').not('.matched')) {
-		wrongLetters++;
-		badGuesses.push(chosenLetter);
-	badGuesses.toString();
-	console.log(badGuesses.length);
-	draw(badGuesses.length);
+		}
+	} else {
+		badGuesses++;
+		draw(badGuesses);
 	}
 });
