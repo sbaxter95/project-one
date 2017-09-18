@@ -78,3 +78,7 @@ $('p').one('click', function (event) {
 		wrongLetter();
 	}
 });
+
+$('button').click(function (event){
+	location.reload();
+});
