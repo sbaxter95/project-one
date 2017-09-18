@@ -41,7 +41,7 @@ function drawHangman (badGuesses) {
     	$('#left-leg').addClass('show');
     } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
-    	$('.result-container').html('You lost' + score);
+    	$('.result-container').html('You lost ' + score);
     }
 }
 
@@ -49,7 +49,7 @@ function checkWinner() {
 	console.log($('.match').length);
 	if ($('.match').length === chosenWord.length) {
 		score++;
-		$('.result-container').html('You won!' + score);
+		$('.result-container').html('You won! ' + score);
 	}
 }
 
