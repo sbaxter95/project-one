@@ -29,20 +29,6 @@ function display () {
 }
 
 function draw (wrongLetters) {
-	// switch (wrongLetters){
-	// 	case 1:
-	// 		$('#gallows-1').addClass('show');
-	// 		break
-	// 	case 2:
-	// 		$('#gallows-2').addClass('show');
-	// 		break;
-	// 	case 3:
-	// 		$('#gallows-3').addClass('show');
-	// 		break;
-	// 	case 4:
-	// 		$('#head').addClass('show');
-	// 		break;
-	// }
 	if (wrongLetters === 1) {
 	        $('#gallows-1').addClass('show');
     	}
@@ -54,6 +40,20 @@ function draw (wrongLetters) {
     } 
     if (wrongLetters === 4) {
     	$('#head').addClass('show');
+    }
+    if (wrongLetters === 5) {
+    	$('#torso').addClass('show');
+    }
+    if (wrongLetters === 6) {
+    	$('#left-arm').addClass('show');
+    }
+    if (wrongLetters === 7) {
+    	$('#right-arm').addClass('show');
+    } if (wrongLetters === 8) {
+    	$('#left-leg').addClass('show');
+    } if (wrongLetters === 9) {
+    	$('#right-leg').addClass('show');
+    	$('.result-container').html('You lost');
     }
 }
 
@@ -68,36 +68,27 @@ $('p').one('click', function (event) {
 			dash[i] = chosenLetter;
 			display();
 			isMatch = true;
+			$('#isMatched').addClass('matched');
+			return
 			goodGuesses++;
 		} else {
 				isMatch = false;
+				$('#isMatched').addClass('not-matched');
 			}
-			// isMatch = false;
-			// badGuesses.push(chosenLetter);
-			// console.log(badGuesses);
-			// if (badGuesses.length === chosenWord.length) {
-			// 	wrongLetters++;
-			// 	draw(wrongLetters);
-			// 	console.log(wrongLetters);
-			// }
+
 			$(this).addClass('wrong-letter');
 			$(this).fadeOut(1000);
-}
+	}
 
-if ($('.word-container').html() === chosenWord) {
+	if ($('.word-container').html() === chosenWord) {
 		$('.result-container').html('You won!');
-}
+	}
 
-if (isMatch === false && goodGuesses === 0) {
-	wrongLetters++;
-	badGuesses.push(chosenLetter);
+	if ($('#isMatched').not('.matched')) {
+		wrongLetters++;
+		badGuesses.push(chosenLetter);
 	badGuesses.toString();
-	draw(wrongLetters);
-}
-
-// console.log(clicks);
-if (clicks >= 10) {
-	$('.result-container').html('You lost');
-}
-
+	console.log(badGuesses.length);
+	draw(badGuesses.length);
+	}
 });
