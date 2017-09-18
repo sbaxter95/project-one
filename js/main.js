@@ -10,6 +10,8 @@ var dash = [];
 
 var badGuesses = [];
 
+var goodGuesses = 0;
+
 var wrongLetters = 0;
 
 for (var i = 0; i < chosenWord.length; i++) {
@@ -60,14 +62,13 @@ $('p').one('click', function (event) {
 	var chosenLetter = $(this).attr('id');
 	for (var i = 0; i < chosenWord.length; i++) {
 		if (chosenLetter === chosenWord[i]) {
-			isMatch = true;
-			var goodGuess = true;
-			console.log(isMatch);
 			$(this).addClass('right-letter');
 			$(this).fadeOut(1000);
 			var position = i;
 			dash[i] = chosenLetter;
 			display();
+			isMatch = true;
+			goodGuesses++;
 		} else {
 				isMatch = false;
 			}
@@ -87,12 +88,10 @@ if ($('.word-container').html() === chosenWord) {
 		$('.result-container').html('You won!');
 }
 
-if (isMatch === false) {
+if (isMatch === false && goodGuesses === 0) {
 	wrongLetters++;
 	badGuesses.push(chosenLetter);
 	badGuesses.toString();
-	badGuesses = badGuesses.split(" ");
-	console.log(badGuesses);
 	draw(wrongLetters);
 }
 
