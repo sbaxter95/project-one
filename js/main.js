@@ -45,10 +45,10 @@ function draw (wrongLetters) {
 $('p').one('click', function (event) {
 	if (chosenWord.includes($(this).attr('id'))) {
 		for (var i = 0; i < chosenWord.length; i++) {
-			// dash[i] = $(this).attr('id');
-			var content = $(this).attr('id')
-			$('.word-container').append('<div>' + content + '</div>') 
-
+			var content = $(this).attr('id');
+			if (content === chosenWord[i]) {
+				$('.blank').eq(i).html(content);
+			}
 		}
 	} else {
 		badGuesses++;
