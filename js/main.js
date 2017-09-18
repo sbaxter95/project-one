@@ -41,16 +41,15 @@ function drawHangman (badGuesses) {
     	$('#left-leg').addClass('show');
     } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
-    	$('.result-container').html('You lost');
-    	$('result-container').html(score);
+    	$('.result-container').html('You lost' + score);
     }
 }
 
 function checkWinner() {
-	if ($('.blank').html() === chosenWord) {
-		$('.result-container').html('You won!');
+	console.log($('.match').length);
+	if ($('.match').length === chosenWord.length) {
 		score++;
-		$('result-container').html(score);
+		$('.result-container').html('You won!' + score);
 	}
 }
 
