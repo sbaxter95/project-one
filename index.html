@@ -7,8 +7,24 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 </head>
 <body>
+	<!-- Title Page -->
+	<div id="title">
+		<h1>HANG-DROID</h1>
+		<h2 id="header">Choose a difficulty</h2>
+		<h3>Choose a difficulty and category, and a random word will be chosen for you to guess</h3>
+		<div class="buttons">
+			<div id="easy">Easy</div>
+			<div id="medium">Medium</div>
+			<div id="hard">Hard</div>
+			<div id="rw" class="hide">Robot Words</div>
+			<div id="rt" class="hide">Robot Types</div>
+			<div id="rc" class="hide">Robot Characters</div>
+		</div>
+	</div>
    
-	<div class="word-container"></div>
+   <!-- Game -->
+   <div class="game hide">
+   		<div class="word-container"></div>
 
 	<div class="row">
 		<div class="col-6">
@@ -78,7 +94,10 @@
 </div>
 <div class="result-container"></div>
 <div id="isMatched"></div>
+<div id="difficulty"></div>
 <button>Play Again</button>
+   </div>
+	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>

@@ -169,3 +169,36 @@ img {
 button {
 	margin-left: 300px;
 }
+
+.easy {
+
+}
+
+.medium {
+
+}
+
+.hard {
+
+}
+
+h1 {
+	text-align: center;
+	font-size: 6em; 
+}
+
+h2 {
+	text-align: center;
+	font-size: 2em;
+	margin-top: 200px;
+}
+
+.buttons {
+	margin-left: 50px;
+	position: absolute;
+	left: 25px;
+}
+
+h6 {
+	background-color: white;
+}

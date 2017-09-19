@@ -1,4 +1,5 @@
 $(function () {
+//Game Logic
 
 var robotWords = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
 var robotTypes = ['industrial', 'domestic', 'space', 'military', 'service', 'medical'];
@@ -79,7 +80,7 @@ $('p').hover(function(){
 $('p').one('click', function (event) {
 	var $this = $(this)
 	$('p').unbind('mouseout');
-	if (chosenWord.includes($this).attr('id')) {
+	if (chosenWord.includes(($this).attr('id'))) {
 		for (var i = 0; i < chosenWord.length; i++) {
 			var content = $this.attr('id');
 			if (content === chosenWord[i]) {
@@ -105,6 +106,68 @@ $('button').click(function (event){
 // 	document.location.href = '../index.html';
 // });
 
+if ($('#difficulty').hasClass('easy')) {
+	console.log('easy');
+}
+
+//Title Logic
+
+var difficulty = '';
+var category = '';
+
+$('#easy').click(function (event){
+	difficulty = 'easy';
+	$('#header').html('Choose category');
+	$('#easy').addClass('hide');
+	$('#medium').addClass('hide');
+	$('#hard').addClass('hide');
+	$('#rw').removeClass('hide');
+	$('#rt').removeClass('hide');
+	$('#rc').removeClass('hide');
+});
+
+$('#medium').click(function (event){
+	difficulty = 'medium';
+	$('#header').html('Choose category');
+	$('#easy').addClass('hide');
+	$('#medium').addClass('hide');
+	$('#hard').addClass('hide');
+	$('#rw').removeClass('hide');
+	$('#rt').removeClass('hide');
+	$('#rc').removeClass('hide');
+});
+
+$('#hard').click(function (event){
+	difficulty = 'hard';
+	$('#header').html('Choose category');
+	$('#easy').addClass('hide');
+	$('#medium').addClass('hide');
+	$('#hard').addClass('hide');
+	$('#rw').removeClass('hide');
+	$('#rt').removeClass('hide');
+	$('#rc').removeClass('hide');
+});
+
+$('#rw').click(function (event){
+	category = 'rw';
+	$('#title').addClass('hide');
+	$('.game').removeClass('hide');
+	$('.game').addClass('show');
+});
+
+$('#rt').click(function (event){
+	category = 'rt';
+	$('#title').addClass('hide');
+	$('#game').removeClass('hide');
+	$('#game').addClass('show');
+});
+
+$('#rc').click(function (event){
+	category = 'rc';
+	$('#title').addClass('hide');
+	$('.game').removeClass('hide');
+	$('.game').addClass('show');
+});
 
 });
 // document.addEventListener('keydown', function(event) {
