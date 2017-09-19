@@ -65,6 +65,7 @@ function drawHangman (badGuesses) {
 function checkWinner() {
 	if ($('.match').length === chosenWord.length) {
 		score++;
+		clearInterval(timerInterval);
 		$('.result-container').html('You won! ' + score);
 		$('.letter').off('click');
 	}
@@ -117,30 +118,31 @@ $('#play-again').click(function (event){
 	location.reload();
 });
 
-function timeRemainingr() {
+function getTimer() {
 	if (difficulty === 'easy') {
 		//60 seconds
-		timeRemainingRemaining = 60;
-		var timeRemainingr = setInterval(countdown, 1000);
+		timeRemaining = 60;
+		timerInterval = setInterval(countdown, 1000);
 	} else if (difficulty === 'medium') {
 		//30 seconds
 		timeRemaining = 30;
-		timeRemainingr = setInterval(countdown, 1000);
+		timeRemaining = setInterval(countdown, 1000);
 	} else {
 		//15 seconds
 		timeRemaining = 15;
-		timeRemainingr = setInterval(countdown, 1000);
+		timeRemaining = setInterval(countdown, 1000);
 	}
 }
 
 function countdown() {
+	console.log('I should be working');
 	if (timeRemaining === 0) {
-		clearTimeout(timeRemainingr);
+		clearTimeout(timeRemaining);
 		$('.result-container').html('You lost ' + score);
     	$('.letter').off('click');
 	} else {
 		console.log(timeRemaining);
-		$('.timeRemainingr').html(timeRemaining + 'seconds remaining');
+		$('#timer').html(timeRemaining + ' seconds remaining');
 		timeRemaining--;
 	}
 }
@@ -170,6 +172,7 @@ function title() {
 	$('#easy').click(function (event){
 	difficulty = 'easy';
 	selectDifficulty();
+	getTimer();
 	});
 
 	$('#medium').click(function (event){
