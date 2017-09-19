@@ -11,9 +11,16 @@ var score = 0;
 
 var difficulty = '';
 
+var difficulty = '';
+var category = '';
+
+
+function game() {
 var chosenWord = getRandomWord();
 
 drawDashes(chosenWord);
+}
+
 
 function drawDashes(chosenWord) {
 	for (var i = 0; i < chosenWord.length; i++) {
@@ -47,6 +54,7 @@ function drawHangman (badGuesses) {
     } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
     	$('.result-container').html('You lost ' + score);
+    	$('.letter').off('click');
     }
 }
 
@@ -55,6 +63,7 @@ function checkWinner() {
 	if ($('.match').length === chosenWord.length) {
 		score++;
 		$('.result-container').html('You won! ' + score);
+		$('.letter').off('click');
 	}
 }
 
@@ -69,7 +78,7 @@ function getRandomWord() {
 	return chosenWord;  
 }
 
-$('p').hover(function(){
+$('.letter').hover(function(){
       var r = Math.floor(Math.random() * 255);
       var g = Math.floor(Math.random() * 255);
       var b = Math.floor(Math.random() * 255);
@@ -77,7 +86,7 @@ $('p').hover(function(){
       $(this).css("background-color", color);
   });
 
-$('p').one('click', function (event) {
+$('.letter').on('click', function (event) {
 	var $this = $(this)
 	$('p').unbind('mouseout');
 	if (chosenWord.includes(($this).attr('id'))) {
@@ -91,10 +100,12 @@ $('p').one('click', function (event) {
 			}
 		}
 		checkWinner();
+		// $('p').off('click');
 	} else {
 		$(this).addClass('wrong-letter');
 		$(this).fadeOut(1000);
 		wrongLetter();
+		// $('.letter').off('click');
 	}
 });
 
@@ -112,10 +123,8 @@ if ($('#difficulty').hasClass('easy')) {
 
 //Title Logic
 
-var difficulty = '';
-var category = '';
-
-$('#easy').click(function (event){
+function title() {
+	$('#easy').click(function (event){
 	difficulty = 'easy';
 	$('#header').html('Choose category');
 	$('#easy').addClass('hide');
@@ -168,6 +177,9 @@ $('#rc').click(function (event){
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
 });
+}
+
+
 
 });
 // document.addEventListener('keydown', function(event) {
