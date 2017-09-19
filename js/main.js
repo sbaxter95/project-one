@@ -60,7 +60,6 @@ function drawHangman (badGuesses) {
 }
 
 function checkWinner() {
-	console.log($('.match').length);
 	if ($('.match').length === chosenWord.length) {
 		score++;
 		$('.result-container').html('You won! ' + score);
@@ -108,6 +107,43 @@ $('.letter').on('click', function (event) {
 		wrongLetter();
 	}
 });
+}
+
+
+$('#play-again').click(function (event){
+	reset();
+	console.log(score);
+});
+
+
+function resetTitle() {
+	$('#header').html('Choose difficulty');
+	$('#easy').removeClass('hide');
+	$('#medium').removeClass('hide');
+	$('#hard').removeClass('hide');
+	$('#rw').addClass('hide');
+	$('#rt').addClass('hide');
+	$('#rc').addClass('hide');
+	$('.game').addClass('hide');
+	
+}
+
+function resetGame() {
+	score = 0;
+	badGuesses = 0;
+	$('.bot').removeClass('show');
+	$('.bot').addClass('hide');
+	$('.game').removeClass('show');
+	$('.letters').show();
+	$('#title').addClass('show');
+	$('#title').removeClass('hide');
+	$('.blank').remove();
+
+}
+
+function reset() {
+	resetGame();
+	resetTitle();
 }
 
 //Title Logic
@@ -165,28 +201,6 @@ $('#rc').click(function (event){
 	chosenWord = getRandomWord(robotCharacters);
 	drawDashes(chosenWord);
 });
-}
-
-function resetTitle() {
-	$('#header').html('Choose difficulty');
-	$('#easy').removeClass('hide');
-	$('#medium').removeClass('hide');
-	$('#hard').removeClass('hide');
-	$('#rw').addClass('hide');
-	$('#rt').addClass('hide');
-	$('#rc').addClass('hide');
-	$('.game').addClass('hide');
-}
-
-function resetGame() {
-	score = 0;
-	$('.hangman-container').removeClass('show');
-
-}
-
-function reset() {
-	resetTitle();
-	resetGame();
 }
 
 
