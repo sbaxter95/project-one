@@ -112,9 +112,7 @@ $('.letter').on('click', function (event) {
 
 //Title Logic
 
-function title() {
-	$('#easy').click(function (event){
-	difficulty = 'easy';
+function selectDifficulty() {
 	$('#header').html('Choose category');
 	$('#easy').addClass('hide');
 	$('#medium').addClass('hide');
@@ -122,53 +120,47 @@ function title() {
 	$('#rw').removeClass('hide');
 	$('#rt').removeClass('hide');
 	$('#rc').removeClass('hide');
+}
+
+function chooseCategory() {
+	$('#title').addClass('hide');
+	$('.game').removeClass('hide');
+	$('.game').addClass('show');
+}
+
+function title() {
+	$('#easy').click(function (event){
+	difficulty = 'easy';
+	selectDifficulty();
 });
 
 $('#medium').click(function (event){
 	difficulty = 'medium';
-	$('#header').html('Choose category');
-	$('#easy').addClass('hide');
-	$('#medium').addClass('hide');
-	$('#hard').addClass('hide');
-	$('#rw').removeClass('hide');
-	$('#rt').removeClass('hide');
-	$('#rc').removeClass('hide');
+	selectDifficulty();
 });
 
 $('#hard').click(function (event){
 	difficulty = 'hard';
-	$('#header').html('Choose category');
-	$('#easy').addClass('hide');
-	$('#medium').addClass('hide');
-	$('#hard').addClass('hide');
-	$('#rw').removeClass('hide');
-	$('#rt').removeClass('hide');
-	$('#rc').removeClass('hide');
+	selectDifficulty();
 });
 
 $('#rw').click(function (event){
 	category = 'rw';
-	$('#title').addClass('hide');
-	$('.game').removeClass('hide');
-	$('.game').addClass('show');
+	chooseCategory();
 	chosenWord = getRandomWord(robotWords);
 	drawDashes(chosenWord);
 });
 
 $('#rt').click(function (event){
 	category = 'rt';
-	$('#title').addClass('hide');
-	$('.game').removeClass('hide');
-	$('.game').addClass('show');
+	chooseCategory();
 	chosenWord = getRandomWord(robotTypes);
 	drawDashes(chosenWord);
 });
 
 $('#rc').click(function (event){
 	category = 'rc';
-	$('#title').addClass('hide');
-	$('.game').removeClass('hide');
-	$('.game').addClass('show');
+	chooseCategory();
 	chosenWord = getRandomWord(robotCharacters);
 	drawDashes(chosenWord);
 });
