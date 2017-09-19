@@ -66,6 +66,14 @@ function getRandomWord() {
 	return chosenWord;  
 }
 
+$('p').hover(function(){
+      var r = Math.floor(Math.random() * 255);
+      var g = Math.floor(Math.random() * 255);
+      var b = Math.floor(Math.random() * 255);
+      var color = "rgb("+r+","+g+","+b+")"
+      $(this).css("background-color", color);
+  });
+
 $('p').one('click', function (event) {
 	if (chosenWord.includes($(this).attr('id'))) {
 		for (var i = 0; i < chosenWord.length; i++) {
