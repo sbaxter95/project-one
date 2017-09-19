@@ -15,11 +15,10 @@ var difficulty = '';
 var category = '';
 
 
-function game() {
 var chosenWord = getRandomWord();
 
 drawDashes(chosenWord);
-}
+
 
 
 function drawDashes(chosenWord) {
@@ -124,7 +123,10 @@ if ($('#difficulty').hasClass('easy')) {
 //Title Logic
 
 function title() {
-	$('#easy').click(function (event){
+
+}
+
+$('#easy').click(function (event){
 	difficulty = 'easy';
 	$('#header').html('Choose category');
 	$('#easy').addClass('hide');
@@ -177,9 +179,6 @@ $('#rc').click(function (event){
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
 });
-}
-
-
 
 });
 // document.addEventListener('keydown', function(event) {
