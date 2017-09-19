@@ -23,10 +23,6 @@ game();
 
 var chosenWord;
 
-// drawDashes(chosenWord);
-
-
-
 function drawDashes(chosenWord) {
 	for (var i = 0; i < chosenWord.length; i++) {
 		$('.word-container').append('<div class="blank"> _ </div>')
@@ -106,55 +102,13 @@ $('.letter').on('click', function (event) {
 			}
 		}
 		checkWinner();
-		// $('p').off('click');
 	} else {
 		$(this).addClass('wrong-letter');
 		$(this).fadeOut(1000);
 		wrongLetter();
-		// $('.letter').off('click');
 	}
 });
 }
-
-// $('.letter').hover(function(){
-//       var r = Math.floor(Math.random() * 255);
-//       var g = Math.floor(Math.random() * 255);
-//       var b = Math.floor(Math.random() * 255);
-//       var color = "rgb("+r+","+g+","+b+")"
-//       $(this).css("background-color", color);
-//   });
-
-// $('.letter').on('click', function (event) {
-// 	var $this = $(this)
-// 	$('p').unbind('mouseout');
-// 	if (chosenWord.includes(($this).attr('id'))) {
-// 		for (var i = 0; i < chosenWord.length; i++) {
-// 			var content = $this.attr('id');
-// 			if (content === chosenWord[i]) {
-// 				$('.blank').eq(i).html(content);
-// 				$('.blank').eq(i).addClass('match');
-// 				$this.addClass('right-letter');
-// 				$this.fadeOut(1000);
-// 			}
-// 		}
-// 		checkWinner();
-// 		// $('p').off('click');
-// 	} else {
-// 		$(this).addClass('wrong-letter');
-// 		$(this).fadeOut(1000);
-// 		wrongLetter();
-// 		// $('.letter').off('click');
-// 	}
-// });
-
-// $('button').click(function (event){
-// 	location.reload();
-// });
-
-// $('.play-button').click(function (event){
-// 	document.location.href = '../index.html';
-// });
-
 
 //Title Logic
 
@@ -223,8 +177,3 @@ $('#rc').click(function (event){
 
 
 });
-// document.addEventListener('keydown', function(event) {
-// 	if (event.keyCode === 65) {
-
-// 	}
-// });
