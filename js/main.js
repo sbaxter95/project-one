@@ -133,6 +133,7 @@ function chooseCategory() {
 	$('#title').removeClass('show');
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
+	$('#title').hide();
 }
 
 function title() {
