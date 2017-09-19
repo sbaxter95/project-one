@@ -1,3 +1,5 @@
+$(function () {
+
 var robotWords = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
 var robotTypes = ['industrial', 'domestic', 'space', 'military', 'service', 'medical'];
 var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'optimus prime', 'r2d2'];
@@ -5,6 +7,8 @@ var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'optimus prime', 'r2d
 var badGuesses = 0;
 
 var score = 0;
+
+var difficulty = '';
 
 var chosenWord = getRandomWord();
 
@@ -73,15 +77,16 @@ $('p').hover(function(){
   });
 
 $('p').one('click', function (event) {
+	var $this = $(this)
 	$('p').unbind('mouseout');
-	if (chosenWord.includes($(this).attr('id'))) {
+	if (chosenWord.includes($this).attr('id')) {
 		for (var i = 0; i < chosenWord.length; i++) {
-			var content = $(this).attr('id');
+			var content = $this.attr('id');
 			if (content === chosenWord[i]) {
 				$('.blank').eq(i).html(content);
 				$('.blank').eq(i).addClass('match');
-				$(this).addClass('right-letter');
-				$(this).fadeOut(1000);
+				$this.addClass('right-letter');
+				$this.fadeOut(1000);
 			}
 		}
 		checkWinner();
@@ -96,10 +101,12 @@ $('button').click(function (event){
 	location.reload();
 });
 
-$('.play-button').click(function (event){
-	document.location.href = '../index.html';
-})
+// $('.play-button').click(function (event){
+// 	document.location.href = '../index.html';
+// });
 
+
+});
 // document.addEventListener('keydown', function(event) {
 // 	if (event.keyCode === 65) {
 
