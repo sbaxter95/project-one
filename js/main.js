@@ -15,9 +15,9 @@ var difficulty = '';
 var category = '';
 
 
-var chosenWord = getRandomWord();
+var chosenWord;
 
-drawDashes(chosenWord);
+// drawDashes(chosenWord);
 
 
 
@@ -71,9 +71,9 @@ function wrongLetter() {
 	drawHangman(badGuesses);
 }
 
-function getRandomWord() {
+function getRandomWord(category) {
 	var randomIndex = Math.floor(Math.random() * 6) + 1;
-	var chosenWord = robotWords[randomIndex].split('');
+	var chosenWord = category[randomIndex].split('');
 	return chosenWord;  
 }
 
@@ -164,6 +164,8 @@ $('#rw').click(function (event){
 	$('#title').addClass('hide');
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
+	chosenWord = getRandomWord(robotWords);
+	drawDashes(chosenWord);
 });
 
 $('#rt').click(function (event){
@@ -171,6 +173,8 @@ $('#rt').click(function (event){
 	$('#title').addClass('hide');
 	$('#game').removeClass('hide');
 	$('#game').addClass('show');
+	chosenWord = getRandomWord(robotTypes);
+	drawDashes(chosenWord);
 });
 
 $('#rc').click(function (event){
@@ -178,6 +182,8 @@ $('#rc').click(function (event){
 	$('#title').addClass('hide');
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
+	chosenWord = getRandomWord(robotCharacters);
+	drawDashes(chosenWord);
 });
 
 });
