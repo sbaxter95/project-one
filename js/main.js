@@ -157,7 +157,6 @@ function selectDifficulty() {
 	$('#rw').removeClass('hide');
 	$('#rt').removeClass('hide');
 	$('#rc').removeClass('hide');
-	console.log('Difficulty things should be hiding!!!')
 }
 
 function chooseCategory() {
@@ -165,10 +164,6 @@ function chooseCategory() {
 	$('#title').removeClass('show');
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
-	// $('#rw').addClass('hide');
-	// $('#rt').addClass('hide');
-	// $('#rc').addClass('hide');
-	console.log('Title things should be hiding!!!')
 }
 
 function title() {
