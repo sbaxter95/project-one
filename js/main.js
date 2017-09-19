@@ -112,6 +112,7 @@ $('.letter').on('click', function (event) {
 
 //Title Logic
 
+//----------------------------------------------------------------------------------------------------
 function selectDifficulty() {
 	$('#header').html('Choose category');
 	$('#easy').addClass('hide');
@@ -166,6 +167,27 @@ $('#rc').click(function (event){
 });
 }
 
+function resetTitle() {
+	$('#header').html('Choose difficulty');
+	$('#easy').removeClass('hide');
+	$('#medium').removeClass('hide');
+	$('#hard').removeClass('hide');
+	$('#rw').addClass('hide');
+	$('#rt').addClass('hide');
+	$('#rc').addClass('hide');
+	$('.game').addClass('hide');
+}
+
+function resetGame() {
+	score = 0;
+	$('.hangman-container').removeClass('show');
+
+}
+
+function reset() {
+	resetTitle();
+	resetGame();
+}
 
 
 });
