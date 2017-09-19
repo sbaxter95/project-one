@@ -134,7 +134,7 @@ function resetGame() {
 	$('.bot').removeClass('show');
 	$('.bot').addClass('hide');
 	$('.game').removeClass('show');
-	$('.letters').show();
+	$('.letters').addClass('show');
 	$('#title').addClass('show');
 	$('#title').removeClass('hide');
 	$('.blank').remove();
@@ -157,12 +157,18 @@ function selectDifficulty() {
 	$('#rw').removeClass('hide');
 	$('#rt').removeClass('hide');
 	$('#rc').removeClass('hide');
+	console.log('Difficulty things should be hiding!!!')
 }
 
 function chooseCategory() {
 	$('#title').addClass('hide');
+	$('#title').removeClass('show');
 	$('.game').removeClass('hide');
 	$('.game').addClass('show');
+	// $('#rw').addClass('hide');
+	// $('#rt').addClass('hide');
+	// $('#rc').addClass('hide');
+	console.log('Title things should be hiding!!!')
 }
 
 function title() {
