@@ -18,7 +18,7 @@ var timeRemaining = 0;
 
 function game() {
 	title();
-	$('.game').addClass('show');
+	$('.game').show();
 	letterEvents();
 }
 
@@ -153,19 +153,19 @@ function countdown() {
 //----------------------------------------------------------------------------------------------------
 function selectDifficulty() {
 	$('#header').html('Choose category');
-	$('#easy').addClass('hide');
-	$('#medium').addClass('hide');
-	$('#hard').addClass('hide');
+	$('#easy').hide();
+	$('#medium').hide();
+	$('#hard').hide();
 	$('#rw').removeClass('hide');
 	$('#rt').removeClass('hide');
 	$('#rc').removeClass('hide');
 }
 
 function chooseCategory() {
-	$('#title').addClass('hide');
+	$('#title').hide();
 	$('#title').removeClass('show');
 	$('.game').removeClass('hide');
-	$('.game').addClass('show');
+	$('.game').show();
 	$('#title').hide();
 }
 
