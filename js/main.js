@@ -111,40 +111,9 @@ $('.letter').on('click', function (event) {
 
 
 $('#play-again').click(function (event){
-	reset();
-	console.log(score);
+	location.reload();
 });
 
-
-function resetTitle() {
-	$('#header').html('Choose difficulty');
-	$('#easy').removeClass('hide');
-	$('#medium').removeClass('hide');
-	$('#hard').removeClass('hide');
-	$('#rw').addClass('hide');
-	$('#rt').addClass('hide');
-	$('#rc').addClass('hide');
-	$('.game').addClass('hide');
-	
-}
-
-function resetGame() {
-	score = 0;
-	badGuesses = 0;
-	$('.bot').removeClass('show');
-	$('.bot').addClass('hide');
-	$('.game').removeClass('show');
-	$('.letters').addClass('show');
-	$('#title').addClass('show');
-	$('#title').removeClass('hide');
-	$('.blank').remove();
-
-}
-
-function reset() {
-	resetGame();
-	resetTitle();
-}
 
 //Title Logic
 
