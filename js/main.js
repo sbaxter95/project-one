@@ -14,6 +14,12 @@ var difficulty = '';
 var difficulty = '';
 var category = '';
 
+function game() {
+	title();
+	letterEvents();
+}
+
+game();
 
 var chosenWord;
 
@@ -77,7 +83,8 @@ function getRandomWord(category) {
 	return chosenWord;  
 }
 
-$('.letter').hover(function(){
+function letterEvents() {
+	$('.letter').hover(function(){
       var r = Math.floor(Math.random() * 255);
       var g = Math.floor(Math.random() * 255);
       var b = Math.floor(Math.random() * 255);
@@ -107,26 +114,52 @@ $('.letter').on('click', function (event) {
 		// $('.letter').off('click');
 	}
 });
+}
 
-$('button').click(function (event){
-	location.reload();
-});
+// $('.letter').hover(function(){
+//       var r = Math.floor(Math.random() * 255);
+//       var g = Math.floor(Math.random() * 255);
+//       var b = Math.floor(Math.random() * 255);
+//       var color = "rgb("+r+","+g+","+b+")"
+//       $(this).css("background-color", color);
+//   });
+
+// $('.letter').on('click', function (event) {
+// 	var $this = $(this)
+// 	$('p').unbind('mouseout');
+// 	if (chosenWord.includes(($this).attr('id'))) {
+// 		for (var i = 0; i < chosenWord.length; i++) {
+// 			var content = $this.attr('id');
+// 			if (content === chosenWord[i]) {
+// 				$('.blank').eq(i).html(content);
+// 				$('.blank').eq(i).addClass('match');
+// 				$this.addClass('right-letter');
+// 				$this.fadeOut(1000);
+// 			}
+// 		}
+// 		checkWinner();
+// 		// $('p').off('click');
+// 	} else {
+// 		$(this).addClass('wrong-letter');
+// 		$(this).fadeOut(1000);
+// 		wrongLetter();
+// 		// $('.letter').off('click');
+// 	}
+// });
+
+// $('button').click(function (event){
+// 	location.reload();
+// });
 
 // $('.play-button').click(function (event){
 // 	document.location.href = '../index.html';
 // });
 
-if ($('#difficulty').hasClass('easy')) {
-	console.log('easy');
-}
 
 //Title Logic
 
 function title() {
-
-}
-
-$('#easy').click(function (event){
+	$('#easy').click(function (event){
 	difficulty = 'easy';
 	$('#header').html('Choose category');
 	$('#easy').addClass('hide');
@@ -171,8 +204,8 @@ $('#rw').click(function (event){
 $('#rt').click(function (event){
 	category = 'rt';
 	$('#title').addClass('hide');
-	$('#game').removeClass('hide');
-	$('#game').addClass('show');
+	$('.game').removeClass('hide');
+	$('.game').addClass('show');
 	chosenWord = getRandomWord(robotTypes);
 	drawDashes(chosenWord);
 });
@@ -185,6 +218,9 @@ $('#rc').click(function (event){
 	chosenWord = getRandomWord(robotCharacters);
 	drawDashes(chosenWord);
 });
+}
+
+
 
 });
 // document.addEventListener('keydown', function(event) {
