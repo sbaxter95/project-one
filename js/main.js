@@ -77,8 +77,8 @@ function wrongLetter() {
 }
 
 function getRandomWord(category) {
-	var randomIndex = Math.floor(Math.random() * 6) + 1;
-	var chosenWord = category[randomIndex].split('');
+	var randomIndex = Math.floor(Math.random() * 6);
+	chosenWord = category[randomIndex].split('');
 	return chosenWord;  
 }
 
@@ -116,6 +116,7 @@ $('.letter').on('click', function (event) {
 
 $('#play-again').click(function (event){
 	location.reload();
+	getTimer();
 });
 
 function getTimer() {
@@ -126,11 +127,11 @@ function getTimer() {
 	} else if (difficulty === 'medium') {
 		//30 seconds
 		timeRemaining = 30;
-		timeRemaining = setInterval(countdown, 1000);
+		timerInterval = setInterval(countdown, 1000);
 	} else {
 		//15 seconds
 		timeRemaining = 15;
-		timeRemaining = setInterval(countdown, 1000);
+		timerInterval = setInterval(countdown, 1000);
 	}
 }
 
@@ -178,28 +179,30 @@ function title() {
 	$('#medium').click(function (event){
 		difficulty = 'medium';
 		selectDifficulty();
+		getTimer();
 	});
 
 	$('#hard').click(function (event){
 		difficulty = 'hard';
 		selectDifficulty();
+		getTimer();
 	});
 
 	$('#rw').click(function (event){
 		chooseCategory();
-		chosenWord = getRandomWord(robotWords);
+		getRandomWord(robotWords);
 		drawDashes(chosenWord);
 	});
 
 	$('#rt').click(function (event){
 		chooseCategory();
-		chosenWord = getRandomWord(robotTypes);
+		getRandomWord(robotTypes);
 		drawDashes(chosenWord);
 	});
 
 	$('#rc').click(function (event){
 		chooseCategory();
-		chosenWord = getRandomWord(robotCharacters);
+		getRandomWord(robotCharacters);
 		drawDashes(chosenWord);
 	});
 }
