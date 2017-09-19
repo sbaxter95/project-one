@@ -14,6 +14,8 @@ var difficulty = '';
 var difficulty = '';
 var category = '';
 
+var timeRemaining = 0;
+
 function game() {
 	title();
 	$('.game').addClass('show');
@@ -115,16 +117,33 @@ $('#play-again').click(function (event){
 	location.reload();
 });
 
-function timer(difficulty) {
+function timeRemainingr() {
 	if (difficulty === 'easy') {
 		//60 seconds
-	} else if difficulty === 'medium' {
+		timeRemainingRemaining = 60;
+		var timeRemainingr = setInterval(countdown, 1000);
+	} else if (difficulty === 'medium') {
 		//30 seconds
+		timeRemaining = 30;
+		timeRemainingr = setInterval(countdown, 1000);
 	} else {
 		//15 seconds
+		timeRemaining = 15;
+		timeRemainingr = setInterval(countdown, 1000);
 	}
 }
 
+function countdown() {
+	if (timeRemaining === 0) {
+		clearTimeout(timeRemainingr);
+		$('.result-container').html('You lost ' + score);
+    	$('.letter').off('click');
+	} else {
+		console.log(timeRemaining);
+		$('.timeRemainingr').html(timeRemaining + 'seconds remaining');
+		timeRemaining--;
+	}
+}
 
 //Title Logic
 
