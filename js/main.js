@@ -110,6 +110,8 @@ $('.letter').on('click', function (event) {
 		$(this).fadeOut(1000);
 		wrongLetter();
 	}
+
+	//Add keyboard events here in this function
 });
 }
 
