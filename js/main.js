@@ -152,21 +152,18 @@ $('#hard').click(function (event){
 });
 
 $('#rw').click(function (event){
-	category = 'rw';
 	chooseCategory();
 	chosenWord = getRandomWord(robotWords);
 	drawDashes(chosenWord);
 });
 
 $('#rt').click(function (event){
-	category = 'rt';
 	chooseCategory();
 	chosenWord = getRandomWord(robotTypes);
 	drawDashes(chosenWord);
 });
 
 $('#rc').click(function (event){
-	category = 'rc';
 	chooseCategory();
 	chosenWord = getRandomWord(robotCharacters);
 	drawDashes(chosenWord);
