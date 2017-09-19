@@ -12,10 +12,19 @@ body {
 	font-size: 2em;
 	text-align: center;
 	height: 40px;
+	width: 75%;
 	padding: 10px;
 	margin-bottom: 50px;
+	margin-left: 100px;
 	background-color: white;
 	border-radius: 5px;
+}
+
+.blank {
+	background-color: white;
+	border-radius: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 p {
@@ -60,6 +69,8 @@ p:hover {
 	font-size: 2em;
 	background-color: white;
 	border-radius: 5px;
+	width: 75%;
+	margin-left: 100px;
 }
 
 .wrong-letter {
@@ -77,21 +88,21 @@ img {
 
 #torso {
 	position: absolute;
-	top: 160px;
+	top: 140px;
 	z-index: 2;
 }
 
 #left-arm {
 	position: absolute;
 	left: 40px;
-	top: 160px;
+	top: 140px;
 	z-index: 1;
 }
 
 #right-arm {
 	position: absolute;
-	right: 220px;
-	top: 160px;
+	right: 260px;
+	top: 140px;
 	height: 250px;
 	width: 250px;
 }
@@ -106,7 +117,7 @@ img {
 
 #right-leg {
 	position: absolute;
-	right: 420px;
+	left: 150px;
 	width: 100px;
 	height: 100px;
 	top: 275px;
