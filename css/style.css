@@ -1,5 +1,5 @@
 body {
-	background-image: url('../images/retro-bg.jpg');
+	background-image: url('../images/bg.jpg');
 	background-image: cover;
 	background-repeat: no-repeat;
 	background-attachment: fixed;
@@ -185,4 +185,9 @@ img {
 	height: 100px;
 	color: white;
 	margin-left: 100px;
+	font-size: 20px;
+}
+
+.red {
+	color: red;
 }
