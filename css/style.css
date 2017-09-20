@@ -60,7 +60,7 @@ p:hover {
 	text-align: center;
 	margin-top: 20px;
 	font-size: 2em;
-	bbackground-color: rgba(255,255,255,0.5);
+	background-color: rgba(255,255,255,0.5);
 	border-radius: 5px;
 	width: 75%;
 	margin-left: 100px;
@@ -162,22 +162,29 @@ img {
 #title {
 	color: white;
 	text-align: center;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
 }
 
 #header {
 	margin-top: 200px;
 	margin-bottom: 200px;
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+}
+
+h3 {
+	text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
 }
 
 .bn {
 	display: inline-block;
 	background-color: black;
-	margin-left: 225px;
+	margin-left: 200px;
 	margin-right: 50px;
 	font-size: 20px;
 	cursor: pointer;
 	margin-top: 20px;
 	width: 100px;
+	border-radius: 5px;
 }
 
 #timer {
@@ -188,6 +195,73 @@ img {
 	font-size: 20px;
 }
 
-.red {
-	color: red;
+#easy {
+	background-color: #66a8a6;
+	text-shadow: none;
+	position: absolute;
+	left: 150px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#medium {
+	background-color: #f8ecc2;
+	color: black;
+	text-shadow: none;
+	position: absolute;
+	left: 450px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#hard {
+	background-color: #e65540;
+	text-shadow: none;
+	position: absolute;
+	left: 750px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#rw {
+	background-color: #66a8a6;
+	text-shadow: none;
+	width: 200px;
+	position: absolute;
+	left: 150px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#rt {
+	background-color: #f8ecc2;
+	color: black;
+	width: 200px;
+	text-shadow: none;
+	position: absolute;
+	left: 450px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#rc {
+	background-color: #e65540;
+	text-shadow: none;
+	width: 200px;
+	position: absolute;
+	left: 750px;
+	top: 550px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
