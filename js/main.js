@@ -14,6 +14,8 @@ var category = '';
 
 var position;
 
+var $button;
+
 var timeRemaining = 0;
 
 function game() {
@@ -153,54 +155,79 @@ $(window).on('keydown', function (event) {
 		keyHighlight('a');
 	} else if (event.keyCode === 66) {
 		getKeyInput('b');
+		keyHighlight('b');
 	} else if (event.keyCode === 67) {
 		getKeyInput('c');
+		keyHighlight('c');
 	} else if (event.keyCode === 68) {
 		getKeyInput('d');
+		keyHighlight('d');
 	} else if (event.keyCode === 69) {
 		getKeyInput('e');
+		keyHighlight('e');
 	} else if (event.keyCode === 70) {
 		getKeyInput('f');
+		keyHighlight('f');
 	} else if (event.keyCode === 71) {
 		getKeyInput('g');
+		keyHighlight('g');
 	} else if (event.keyCode === 72) {
 		getKeyInput('h');
+		keyHighlight('h');
 	} else if (event.keyCode === 73) {
 		getKeyInput('i');
+		keyHighlight('i');
 	} else if (event.keyCode === 74) {
 		getKeyInput('j');
+		keyHighlight('j');
 	} else if (event.keyCode === 75) {
 		getKeyInput('k');
+		keyHighlight('k');
 	} else if (event.keyCode === 76) {
 		getKeyInput('l');
+		keyHighlight('l');
 	} else if (event.keyCode === 77) {
 		getKeyInput('m');
+		keyHighlight('m');
 	} else if (event.keyCode === 78) {
 		getKeyInput('n');
+		keyHighlight('n');
 	} else if (event.keyCode === 79) {
 		getKeyInput('o');
+		keyHighlight('o');
 	} else if (event.keyCode === 80) {
 		getKeyInput('p');
+		keyHighlight('p');
 	} else if (event.keyCode === 81) {
 		getKeyInput('q');
+		keyHighlight('q');
 	} else if (event.keyCode === 82) {
 		getKeyInput('r');
+		keyHighlight('r');
 	} else if (event.keyCode === 83) {
 		getKeyInput('s');
+		keyHighlight('s');
 	} else if (event.keyCode === 84) {
 		getKeyInput('t');
+		keyHighlight('t');
 	} else if (event.keyCode === 85) {
 		getKeyInput('u');
+		keyHighlight('u');
 	} else if (event.keyCode === 86) {
 		getKeyInput('v');
+		keyHighlight('v');
 	} else if (event.keyCode === 87) {
 		getKeyInput('w');
+		keyHighlight('w');
 	} else if (event.keyCode === 88) {
 		getKeyInput('x');
+		keyHighlight('x');
 	} else if (event.keyCode === 89) {
 		getKeyInput('y');
+		keyHighlight('y');
 	} else if (event.keyCode === 90) {
 		getKeyInput('z');
+		keyHighlight('z');
 	}
 });
 
@@ -225,9 +252,84 @@ function getKeyInput(letter) {
 
 function keyHighlight(letter) {
 	if (letter === 'a') {
-		var $button = $('.letter-container').find('#a');
+		$button = $('.letter-container').find('#a');
 		$button.fadeOut(1000);
-	}
+	} else if (letter === 'b') {
+		$button = $('.letter-container').find('#b');
+		$button.fadeOut(1000);
+	} else if (letter === 'c') {
+		$button = $('.letter-container').find('#c');
+		$button.fadeOut(1000);
+	} else if (letter === 'd') {
+		$button = $('.letter-container').find('#d');
+		$button.fadeOut(1000);
+	} else if (letter === 'e') {
+		$button = $('.letter-container').find('#e');
+		$button.fadeOut(1000);
+	} else if (letter === 'f') {
+		$button = $('.letter-container').find('#f');
+		$button.fadeOut(1000);
+	} else if (letter === 'g') {
+		$button = $('.letter-container').find('#g');
+		$button.fadeOut(1000);
+	} else if (letter === 'h') {
+		$button = $('.letter-container').find('#h');
+		$button.fadeOut(1000);
+	} else if (letter === 'i') {
+		$button = $('.letter-container').find('#i');
+		$button.fadeOut(1000);
+	} else if (letter === 'j') {
+		$button = $('.letter-container').find('#j');
+		$button.fadeOut(1000);
+	} else if (letter === 'k') {
+		$button = $('.letter-container').find('#k');
+		$button.fadeOut(1000);
+	} else if (letter === 'l') {
+		$button = $('.letter-container').find('#l');
+		$button.fadeOut(1000);
+	} else if (letter === 'm') {
+		$button = $('.letter-container').find('#m');
+		$button.fadeOut(1000);
+	} else if (letter === 'n') {
+		$button = $('.letter-container').find('#n');
+		$button.fadeOut(1000);
+	} else if (letter === 'o') {
+		$button = $('.letter-container').find('#o');
+		$button.fadeOut(1000);
+	} else if (letter === 'p') {
+		$button = $('.letter-container').find('#p');
+		$button.fadeOut(1000);
+	} else if (letter === 'q') {
+		$button = $('.letter-container').find('#q');
+		$button.fadeOut(1000);
+	} else if (letter === 'r') {
+		$button = $('.letter-container').find('#r');
+		$button.fadeOut(1000);
+	} else if (letter === 's') {
+		$button = $('.letter-container').find('#s');
+		$button.fadeOut(1000);
+	} else if (letter === 't') {
+		$button = $('.letter-container').find('#t');
+		$button.fadeOut(1000);
+	} else if (letter === 'u') {
+		$button = $('.letter-container').find('#u');
+		$button.fadeOut(1000);
+	} else if (letter === 'v') {
+		$button = $('.letter-container').find('#v');
+		$button.fadeOut(1000);
+	} else if (letter === 'w') {
+		$button = $('.letter-container').find('#w');
+		$button.fadeOut(1000);
+	} else if (letter === 'x') {
+		$button = $('.letter-container').find('#x');
+		$button.fadeOut(1000);
+	} else if (letter === 'y') {
+		$button = $('.letter-container').find('#y');
+		$button.fadeOut(1000);
+	} else if (letter === 'z') {
+		$button = $('.letter-container').find('#z');
+		$button.fadeOut(1000);
+	} 
 }
 
 //Title Logic
