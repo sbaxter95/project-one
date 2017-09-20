@@ -58,6 +58,7 @@ function drawHangman (badGuesses) {
     } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
     	$('.result-container').html('You lost ' + score);
+    	clearInterval(timerInterval);
     	$('.letter').off('click');
     }
 }
@@ -152,7 +153,6 @@ function countdown() {
 
 //Title Logic
 
-//----------------------------------------------------------------------------------------------------
 function selectDifficulty() {
 	$('#header').html('Choose category');
 	$('#easy').hide();
