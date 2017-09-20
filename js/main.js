@@ -165,7 +165,7 @@ $(function () {
 
 	function getScore() {
 		if (difficulty === 'easy') {
-			score = timeRemaining * chosenWord.length + 100;
+			score = timeRemaining * chosenWord.length;
 		} else if (difficulty === 'medium') {
 			score = timeRemaining * chosenWord.length + 200;
 		} else {
