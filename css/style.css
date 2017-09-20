@@ -265,3 +265,13 @@ h3 {
 	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+#play-again {
+	background-color: #66a8a6;
+	text-shadow: none;
+	color: white;
+	border-radius: 5px;
+	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}

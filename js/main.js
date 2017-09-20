@@ -145,10 +145,7 @@ function countdown() {
 		clearTimeout(timeRemaining);
 		$('.result-container').html('You lost');
     	$('.letter').off('click');
-	} else if (timeRemaining === 5) {
-		$('#timer').addClass('red');
-	} 
-	else {
+	} else {
 		$('#timer').html(timeRemaining + ' seconds remaining');
 		timeRemaining--;
 	}
