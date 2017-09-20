@@ -12,6 +12,8 @@ var difficulty = '';
 var difficulty = '';
 var category = '';
 
+var position;
+
 var timeRemaining = 0;
 
 function game() {
@@ -137,7 +139,7 @@ function getTimer() {
 function countdown() {
 	if (timeRemaining === 0) {
 		clearTimeout(timeRemaining);
-		$('.result-container').html('You lost ' + score);
+		$('.result-container').html('You lost');
     	$('.letter').off('click');
 	} else {
 		$('#timer').html(timeRemaining + ' seconds remaining');
@@ -148,6 +150,7 @@ function countdown() {
 $(window).on('keydown', function (event) {
 	if (event.keyCode === 65) {
 		getKeyInput('a');
+		keyHighlight('a');
 	} else if (event.keyCode === 66) {
 		getKeyInput('b');
 	} else if (event.keyCode === 67) {
@@ -208,15 +211,22 @@ function getKeyInput(letter) {
 			if (content === chosenWord[i]) {
 				$('.blank').eq(i).html(content);
 				$('.blank').eq(i).addClass('match');
-				// $this.addClass('right-letter');
-				// $this.fadeOut(1000);
 			}
 		}
 		checkWinner();
 	} else {
-		// $(this).addClass('wrong-letter');
-		// $(this).fadeOut(1000);
+		// if ($('.letter').attr('id') === letter) {
+		// 	$(this).addClass('right-letter');
+		//  	$(this).fadeOut(1000);
+		// }
 		wrongLetter();
+	}
+}
+
+function keyHighlight(letter) {
+	if (letter === 'a') {
+		var $button = $('.letter-container').find('#a');
+		$button.fadeOut(1000);
 	}
 }
 
