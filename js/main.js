@@ -3,7 +3,7 @@ $(function () {
 
 var robotWords = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
 var robotTypes = ['industrial', 'domestic', 'space', 'military', 'service', 'medical'];
-var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'optimus prime', 'r2d2'];
+var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'robbie', 'transformers'];
 
 var badGuesses = 0;
 

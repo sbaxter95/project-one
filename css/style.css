@@ -222,6 +222,10 @@ h3 {
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#easy:hover {
+	background-color: #aac3a2;
+}
+
 #medium {
 	background-color: #f8ecc2;
 	color: black;
@@ -232,6 +236,10 @@ h3 {
 	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#medium:hover {
+	background-color: #aac3a2;
 }
 
 #hard {
@@ -245,6 +253,10 @@ h3 {
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#hard:hover {
+	background-color: #aac3a2;
+}
+
 #rw {
 	background-color: #66a8a6;
 	text-shadow: none;
@@ -255,6 +267,10 @@ h3 {
 	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#rw:hover {
+	background-color: #aac3a2;
 }
 
 #rt {
@@ -270,6 +286,10 @@ h3 {
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#rt:hover {
+	background-color: #aac3a2;
+}
+
 #rc {
 	background-color: #e65540;
 	text-shadow: none;
@@ -282,6 +302,10 @@ h3 {
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+#rc:hover {
+	background-color: #aac3a2;
+}
+
 #play-again {
 	background-color: #66a8a6;
 	text-shadow: none;
@@ -290,4 +314,8 @@ h3 {
 	-webkit-box-shadow: 7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+#play-again:hover {
+	background-color: #aac3a2;
 }
