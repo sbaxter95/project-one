@@ -62,6 +62,7 @@ function drawHangman (badGuesses) {
     	$('.result-container').html('You lost');
     	clearInterval(timerInterval);
     	$('.letter').off('click');
+    	$(window).unbind('keydown');
     }
 }
 
@@ -70,6 +71,7 @@ function checkWinner() {
 		clearInterval(timerInterval);
 		$('.result-container').html('You won!');
 		$('.letter').off('click');
+		$(window).unbind('keydown');
 	}
 }
 
@@ -242,10 +244,6 @@ function getKeyInput(letter) {
 		}
 		checkWinner();
 	} else {
-		// if ($('.letter').attr('id') === letter) {
-		// 	$(this).addClass('right-letter');
-		//  	$(this).fadeOut(1000);
-		// }
 		wrongLetter();
 	}
 }
