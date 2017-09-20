@@ -7,8 +7,6 @@ var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'optimus prime', 'r2d
 
 var badGuesses = 0;
 
-var score = 0;
-
 var difficulty = '';
 
 var difficulty = '';
@@ -57,7 +55,7 @@ function drawHangman (badGuesses) {
     	$('#left-leg').addClass('show');
     } if (badGuesses === 9) {
     	$('#right-leg').addClass('show');
-    	$('.result-container').html('You lost ' + score);
+    	$('.result-container').html('You lost');
     	clearInterval(timerInterval);
     	$('.letter').off('click');
     }
@@ -65,9 +63,8 @@ function drawHangman (badGuesses) {
 
 function checkWinner() {
 	if ($('.match').length === chosenWord.length) {
-		score++;
 		clearInterval(timerInterval);
-		$('.result-container').html('You won! ' + score);
+		$('.result-container').html('You won!');
 		$('.letter').off('click');
 	}
 }
