@@ -63,6 +63,7 @@ function drawHangman (badGuesses) {
     	clearInterval(timerInterval);
     	$('.letter').off('click');
     	$(window).unbind('keydown');
+    	$('.word-container').html(chosenWord);
     }
 }
 
