@@ -149,18 +149,60 @@ function countdown() {
 }
 
 $(window).on('keydown', function (event) {
-		switch (event.keyCode) {
-			case 65: 
-				getKeyInput('a');
-			break;
-			case 66:
-				console.log('b pressed');
-			break;
-			case 67:
-				console.log('c pressed');
-			break;
-		}
-	});
+	if (event.keyCode === 65) {
+		getKeyInput('a');
+	} else if (event.keyCode === 66) {
+		getKeyInput('b');
+	} else if (event.keyCode === 67) {
+		getKeyInput('c');
+	} else if (event.keyCode === 68) {
+		getKeyInput('d');
+	} else if (event.keyCode === 69) {
+		getKeyInput('e');
+	} else if (event.keyCode === 70) {
+		getKeyInput('f');
+	} else if (event.keyCode === 71) {
+		getKeyInput('g');
+	} else if (event.keyCode === 72) {
+		getKeyInput('h');
+	} else if (event.keyCode === 73) {
+		getKeyInput('i');
+	} else if (event.keyCode === 74) {
+		getKeyInput('j');
+	} else if (event.keyCode === 75) {
+		getKeyInput('k');
+	} else if (event.keyCode === 76) {
+		getKeyInput('l');
+	} else if (event.keyCode === 77) {
+		getKeyInput('m');
+	} else if (event.keyCode === 78) {
+		getKeyInput('n');
+	} else if (event.keyCode === 79) {
+		getKeyInput('o');
+	} else if (event.keyCode === 80) {
+		getKeyInput('p');
+	} else if (event.keyCode === 81) {
+		getKeyInput('q');
+	} else if (event.keyCode === 82) {
+		getKeyInput('r');
+	} else if (event.keyCode === 83) {
+		getKeyInput('s');
+	} else if (event.keyCode === 84) {
+		getKeyInput('t');
+	} else if (event.keyCode === 85) {
+		getKeyInput('u');
+	} else if (event.keyCode === 86) {
+		getKeyInput('v');
+	} else if (event.keyCode === 87) {
+		getKeyInput('w');
+	} else if (event.keyCode === 88) {
+		getKeyInput('x');
+	} else if (event.keyCode === 89) {
+		getKeyInput('y');
+	} else if (event.keyCode === 90) {
+		getKeyInput('z');
+	}
+});
 
 function getKeyInput(letter) {
 	var content = letter;
