@@ -18,10 +18,11 @@ var timeRemaining = 0;
 
 function game() {
 	title();
-	$('.game').show();
+	// $('.game').show();
 	letterEvents();
 }
 
+$('.game').hide();
 game();
 
 var chosenWord;
