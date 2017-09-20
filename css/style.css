@@ -175,6 +175,9 @@ img {
 	margin-left: 225px;
 	margin-right: 50px;
 	font-size: 20px;
+	cursor: pointer;
+	margin-top: 20px;
+	width: 100px;
 }
 
 #timer {

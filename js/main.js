@@ -18,7 +18,6 @@ var timeRemaining = 0;
 
 function game() {
 	title();
-	// $('.game').show();
 	letterEvents();
 }
 
@@ -113,7 +112,6 @@ $('.letter').on('click', function (event) {
 		wrongLetter();
 	}
 
-	//Add keyboard events here in this function
 });
 }
 
@@ -140,17 +138,29 @@ function getTimer() {
 }
 
 function countdown() {
-	console.log('I should be working');
 	if (timeRemaining === 0) {
 		clearTimeout(timeRemaining);
 		$('.result-container').html('You lost ' + score);
     	$('.letter').off('click');
 	} else {
-		console.log(timeRemaining);
 		$('#timer').html(timeRemaining + ' seconds remaining');
 		timeRemaining--;
 	}
 }
+
+$(window).on('keydown', function (event) {
+		switch (event.keyCode) {
+			case 65: //a
+				console.log('a pressed');
+			break;
+			case 66:
+				console.log('b pressed');
+			break;
+			case 67:
+				console.log('c pressed');
+			break;
+		}
+	});
 
 //Title Logic
 
