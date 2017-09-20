@@ -150,8 +150,8 @@ function countdown() {
 
 $(window).on('keydown', function (event) {
 		switch (event.keyCode) {
-			case 65: //a
-				console.log('a pressed');
+			case 65: 
+				getKeyInput('a');
 			break;
 			case 66:
 				console.log('b pressed');
@@ -161,6 +161,25 @@ $(window).on('keydown', function (event) {
 			break;
 		}
 	});
+
+function getKeyInput(letter) {
+	var content = letter;
+	if (chosenWord.includes(letter)) {
+		for (var i = 0; i < chosenWord.length; i++) {
+			if (content === chosenWord[i]) {
+				$('.blank').eq(i).html(content);
+				$('.blank').eq(i).addClass('match');
+				// $this.addClass('right-letter');
+				// $this.fadeOut(1000);
+			}
+		}
+		checkWinner();
+	} else {
+		// $(this).addClass('wrong-letter');
+		// $(this).fadeOut(1000);
+		wrongLetter();
+	}
+}
 
 //Title Logic
 
