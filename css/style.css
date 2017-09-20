@@ -338,3 +338,25 @@ h3 {
 	-moz-box-shadow:    7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
+
+#gallows-1 {
+	width: 200px;
+	height: 10px;
+	background-color: black;
+	margin-top: 80px;
+}
+
+#gallows-2 {
+	width: 10px;
+	height: 450px;
+	background-color: black;
+	margin-left: 40px;
+}
+
+#gallows-3 {
+	width: 200px;
+	height: 10px;
+	background-color: black;
+	margin-left: 30px;
+	margin-top: 0;
+}
