@@ -202,6 +202,20 @@ $(function () {
 		$('.letter-container').find('#' + letter).fadeOut(1000);
 	}
 
+	function highscore() {
+	 var highScore = localStorage.getItem("highScore");
+	 localStorage.highScore = 0;
+        if(highScore !== null){
+            if (score > highScore) {
+                localStorage.setItem("highscore", score);      
+            }
+        }
+        else{
+            localStorage.setItem("highscore", score);
+        }
+        console.log(highscore);
+	}
+
 	//Title Logic
 
 	function selectDifficulty() {
