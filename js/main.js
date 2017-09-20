@@ -14,7 +14,7 @@ var category = '';
 
 var position;
 
-var $button;
+var score;
 
 var timeRemaining = 0;
 
@@ -64,6 +64,8 @@ function drawHangman (badGuesses) {
     	$('.letter').off('click');
     	$(window).unbind('keydown');
     	$('.word-container').html(chosenWord);
+    	score = 0;
+    	displayScore();
     }
 }
 
@@ -73,7 +75,8 @@ function checkWinner() {
 		$('.result-container').html('You won!');
 		$('.letter').off('click');
 		$(window).unbind('keydown');
-		console.log(getScore());
+		getScore();
+		displayScore();
 	}
 }
 
@@ -149,6 +152,8 @@ function countdown() {
     	$('.letter').off('click');
     	$('.word-container').html(chosenWord);
     	$(window).unbind('keydown');
+    	score = 0;
+    	displayScore();
 
 	} else {
 		$('#timer').html(timeRemaining + ' seconds remaining');
@@ -158,14 +163,18 @@ function countdown() {
 
 function getScore() {
 	if (difficulty === 'easy') {
-		var score = timeRemaining * chosenWord.length + 100;
+		score = timeRemaining * chosenWord.length + 100;
 	} else if (difficulty === 'medium') {
-		var score = timeRemaining * chosenWord.length + 200;
+		score = timeRemaining * chosenWord.length + 200;
 	} else {
-		var score = timeRemaining * chosenWord.length + 300;
+		score = timeRemaining * chosenWord.length + 300;
 	}
 	return score;
 } 
+
+function displayScore() {
+	$('#score').html('Score: ' + score);
+}
 
 $(window).on('keydown', function (event) {
 	matchKeyInput(event.key);
@@ -174,7 +183,6 @@ $(window).on('keydown', function (event) {
 
 function matchKeyInput(letter) {
 	var content = letter;
-	console.log(content);
 	if (chosenWord.includes(letter)) {
 		for (var i = 0; i < chosenWord.length; i++) {
 			if (content === chosenWord[i]) {
