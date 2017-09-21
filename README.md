@@ -44,7 +44,5 @@ Additionally, play it [here](https://sbaxter95.github.io/project-one/)
 #### Customising
 To modify the HTML, change the index.html file, to modify the CSS or JavaScript, change the style.css and main.js files respectively.
 
-## License
-MIT License
 
 
