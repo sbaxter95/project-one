@@ -40,7 +40,7 @@ Screenshots Folder in the GitHub repo [https://github.com/sbaxter95/project-one/
 ## Usage
 #### Building and Running
 The git repo can be forked or cloned and the index.html file opened in a web browser.  
-Additionally, play it [here](https://sbaxter95.github.io/project-one/)
+Additionally, play it here: [https://sbaxter95.github.io/project-one/](https://sbaxter95.github.io/project-one/)
 #### Customising
 To modify the HTML, change the index.html file, to modify the CSS or JavaScript, change the style.css and main.js files respectively.
 
