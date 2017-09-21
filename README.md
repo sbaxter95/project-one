@@ -16,6 +16,7 @@ There are three different levels, which have different time limits - easy has a 
 The scoring system is dependant on the time remaining. It is calculated by multiplying the length of the word by the time remaining. To compensate for the shorter time limits, medium has a bonus of 300 points and hard a bonus of 500 points. The easy difficulty level carries no bonus.
 
 ## Implementation
+#### Technologies and Tools
 The following technologies and tools have been used to implement this game:  
 
 * Semantic HTML5
@@ -24,6 +25,14 @@ The following technologies and tools have been used to implement this game:
 * jQuery 2.2.4
 * Twitter Bootstrap v4
 * Git and Github for version control
+
+#### Images
+These are the images that were used in the game:
+    
+**Robot:** [https://commons.wikimedia.org/wiki/File:Schylling_%E2%80%93_Robot_2008_ME100_-_Front.jpg](https://commons.wikimedia.org/wiki/File:Schylling_%E2%80%93_Robot_2008_ME100_-_Front.jpg)  
+**Background Image:** [http://bsnscb.com/blue-yellow-abstract-wallpapers/27035802.html](http://bsnscb.com/blue-yellow-abstract-wallpapers/27035802.html)   
+**Robot Favicon:** [http://game-icons.net/lorc/originals/vintage-robot.html](http://game-icons.net/lorc/originals/vintage-robot.html)
+
 
 ## Usage
 #### Building and Running
