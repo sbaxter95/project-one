@@ -13,7 +13,7 @@ There are also CSS and JavaScript files which pertain to the styling and logic r
 The game will pick a random word based on the category chosen by the player, who then selects letters.  
 If the letter isn't in the word, then the hangman is drawn.
 There are three different levels, which have different time limits - easy has a time limit of 60 seconds, medium a limit of 30 seconds and hard a limit of 15 seconds . 
-The scoring system is dependant on the time remaining. It is calculated by multiplying the length of the word by the time remaining. To compensate for the shorter time limits, medium has a bonus of 200 points and hard a bonus of 300 points. The easy difficulty level carries no bonus.
+The scoring system is dependant on the time remaining. It is calculated by multiplying the length of the word by the time remaining. To compensate for the shorter time limits, medium has a bonus of 300 points and hard a bonus of 500 points. The easy difficulty level carries no bonus.
 
 ## Implementation
 The following technologies and tools have been used to implement this game:  
