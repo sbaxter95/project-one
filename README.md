@@ -35,7 +35,7 @@ These are the images that were used in the game:
 
 ## Screenshots
 
-
+Screenshots Folder in the GitHub repo [https://github.com/sbaxter95/project-one/tree/master/screenshots](https://github.com/sbaxter95/project-one/tree/master/screenshots)
 
 ## Usage
 #### Building and Running
