@@ -14,7 +14,6 @@ $(function () {
 	var position;
 
 	var score;
-	var highscore = localStorage.getItem("highscore");
 
 	var timeRemaining = 0;
 
@@ -220,19 +219,6 @@ $(function () {
 		var color = "rgb("+r+","+g+","+b+")"
 		$(this).css("background-color", color);
 		$('.letter-container').find('#' + letter).fadeOut(1000);
-	}
-
-	//Local storage storing the highscore
-	function highscore() {
-		if(highscore !== null){
-		    if (score > highscore) {
-		        localStorage.setItem("highscore", score);      
-		    }
-		}
-		else{
-		    localStorage.setItem("highscore", score);
-		}
-		console.log(localStorage.highscore);
 	}
 
 	//Title Logic
