@@ -167,9 +167,9 @@ $(function () {
 		if (difficulty === 'easy') {
 			score = timeRemaining * chosenWord.length;
 		} else if (difficulty === 'medium') {
-			score = timeRemaining * chosenWord.length + 200;
-		} else {
 			score = timeRemaining * chosenWord.length + 300;
+		} else {
+			score = timeRemaining * chosenWord.length + 500;
 		}
 		return score;
 	} 
