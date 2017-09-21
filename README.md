@@ -22,6 +22,7 @@ The following technologies and tools have been used to implement this game:
 * CSS3
 * JavaScript ES5
 * jQuery 2.2.4
+* Twitter Bootstrap v4
 * Git and Github for version control
 
 ## Usage
