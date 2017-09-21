@@ -202,11 +202,13 @@ $(function () {
 		$($score).html('Score: ' + score);
 	}
 
-	//Event listener for keyboard input
-	$(window).on('keydown', function (event) {
+	//Function for keyboard input
+	function keyboardInput() {
+		$(window).on('keydown', function (event) {
 		matchKeyInput(event.key);
 		removeKey(event.key);
 	});
+	}
 
 	//Logic to check if key pressed matches the chosen word
 	function matchKeyInput(letter) {
@@ -277,6 +279,7 @@ $(function () {
 			getRandomWord(robotWords);
 			drawDashes(chosenWord);
 			letterEvents();
+			keyboardInput();
 		});
 
 		$($rtButton).click(function (event){
@@ -284,6 +287,7 @@ $(function () {
 			getRandomWord(robotTypes);
 			drawDashes(chosenWord);
 			letterEvents();
+			keyboardInput();
 		});
 
 		$($rcButton).click(function (event){
@@ -291,6 +295,7 @@ $(function () {
 			getRandomWord(robotCharacters);
 			drawDashes(chosenWord);
 			letterEvents();
+			keyboardInput();
 		});
 	}
 });
