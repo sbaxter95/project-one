@@ -1,6 +1,7 @@
 $(function () {
 //Game Logic
 
+	//Arrays of words in the different categories
 	var robotWords = ['ai', 'interaction', 'automation', 'planning', 'nano', 'learning'];
 	var robotTypes = ['industrial', 'domestic', 'space', 'military', 'service', 'medical'];
 	var robotCharacters = ['hal', 'bender', 'robocop', 'data', 'robbie', 'transformers'];
@@ -8,18 +9,18 @@ $(function () {
 	var badGuesses = 0;
 
 	var difficulty = '';
-
-	var difficulty = '';
 	var category = '';
 
 	var position;
 
 	var score;
+	var highscore = localStorage.getItem("highscore");
 
 	var timeRemaining = 0;
 
 	var chosenWord;
 
+	//Function that runs the game
 	function game() {
 		title();
 		letterEvents();
@@ -28,12 +29,14 @@ $(function () {
 	$('.game').hide();
 	game();
 
+	//Draws dashes for each letter of the chosen word
 	function drawDashes(chosenWord) {
 		for (var i = 0; i < chosenWord.length; i++) {
 			$('.word-container').append('<div class="blank"> _ </div>')
 		}
 	}
 
+	//Draws the hangman based on the number of incorrect letters chosen
 	function drawHangman (badGuesses) {
 		if (badGuesses === 1) {
 		    $('#gallows-1').addClass('show');
@@ -71,6 +74,7 @@ $(function () {
 	    }
 	}
 
+	//Checks to see if the player has chosen the correct letters and disables player input
 	function checkWinner() {
 		if ($('.match').length === chosenWord.length) {
 			clearInterval(timerInterval);
@@ -82,17 +86,20 @@ $(function () {
 		}
 	}
 
+	//Bad guesses is incremented and the hangman is drawn
 	function wrongLetter() {
 		badGuesses++;
 		drawHangman(badGuesses);
 	}
 
+	//Picks random word from selected category
 	function getRandomWord(category) {
 		var randomIndex = Math.floor(Math.random() * 6);
 		chosenWord = category[randomIndex].split('');
 		return chosenWord;  
 	}
 
+	//Logic when letter clicked on, and random hover colours 
 	function letterEvents() {
 		$('.letter').hover(function(){
 	      var r = Math.floor(Math.random() * 255);
@@ -126,11 +133,13 @@ $(function () {
 	}
 
 
+	//Click listener for play again button
 	$('#play-again').click(function (event){
 		location.reload();
 		getTimer();
 	});
 
+	//Sets the time the timer is counting down from based on difficulty
 	function getTimer() {
 		if (difficulty === 'easy') {
 			//60 seconds
@@ -147,6 +156,7 @@ $(function () {
 		}
 	}
 
+	//Function that the timer executes every 1 second - counts down 
 	function countdown() {
 		if (timeRemaining === 0) {
 			clearTimeout(timeRemaining);
@@ -163,6 +173,7 @@ $(function () {
 		}
 	}
 
+	//Determines the score based on difficulty, time and word length
 	function getScore() {
 		if (difficulty === 'easy') {
 			score = timeRemaining * chosenWord.length;
@@ -174,15 +185,18 @@ $(function () {
 		return score;
 	} 
 
+	//Displays the score on the page
 	function displayScore() {
 		$('#score').html('Score: ' + score);
 	}
 
+	//Event listener for keyboard input
 	$(window).on('keydown', function (event) {
 		matchKeyInput(event.key);
 		removeKey(event.key);
 	});
 
+	//Logic to check if key pressed matches the chosen word
 	function matchKeyInput(letter) {
 		var content = letter;
 		if (chosenWord.includes(letter)) {
@@ -198,26 +212,25 @@ $(function () {
 		}
 	}
 
+	//Removes corresponding button from the page when key is pressed
 	function removeKey(letter) {
 		$('.letter-container').find('#' + letter).fadeOut(1000);
 	}
 
+	//Local storage storing the highscore
 	function highscore() {
-	 var highScore = localStorage.getItem("highScore");
-	 localStorage.highScore = 0;
-        if(highScore !== null){
-            if (score > highScore) {
-                localStorage.setItem("highscore", score);      
-            }
-        }
-        else{
-            localStorage.setItem("highscore", score);
-        }
-        console.log(highscore);
+		if(highscore !== null){
+		    if (score > highscore) {
+		        localStorage.setItem("highscore", score);      
+		    }
+		}
+		else{
+		    localStorage.setItem("highscore", score);
+		}
+		console.log(localStorage.highscore);
 	}
 
 	//Title Logic
-
 	function selectDifficulty() {
 		$('#header').html('Choose category');
 		$('#easy').hide();
@@ -273,6 +286,4 @@ $(function () {
 			drawDashes(chosenWord);
 		});
 	}
-
-
 });

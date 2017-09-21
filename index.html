@@ -17,6 +17,7 @@
 		<h1>HANG-DROID</h1>
 		<h2 id="header">Choose a difficulty</h2>
 		<h3>Choose a difficulty and category, and a random word will be chosen for you to guess. You will score more highly if you guess the word faster on a higher difficulty</h3>
+		<!-- Difficulty and Category buttons -->
 		<div class="buttons">
 			<div id="easy" class="bn">Easy</div>
 			<div id="medium" class="bn">Medium</div>
@@ -32,70 +33,73 @@
    		<div id="timer"></div>
    		<div class="word-container"></div>
    		<div id="score"></div>
-	<div class="row">
-		<div class="col-6">
-			<div class="letter-container">
-				<p class="letter" id="a">a</p>
-				<p class="letter" id="b">b</p>
-				<p class="letter" id="c">c</p>
-				<p class="letter" id="d">d</p>
-				<p class="letter" id="e">e</p>
-				<p class="letter" id="f">f</p>
-				<p class="letter" id="g">g</p>
-				<p class="letter" id="h">h</p>
-				<p class="letter" id="i">i</p>
-				<p class="letter" id="j">j</p>
-				<p class="letter" id="k">k</p>
-				<p class="letter" id="l">l</p>
-				<p class="letter" id="m">m</p>
-				<p class="letter" id="n">n</p>
-				<p class="letter" id="o">o</p>
-				<p class="letter" id="p">p</p>
-				<p class="letter" id="q">q</p>
-				<p class="letter" id="r">r</p>
-				<p class="letter" id="s">s</p>
-				<p class="letter" id="t">t</p>
-				<p class="letter" id="u">u</p>
-				<p class="letter" id="v">v</p>
-				<p class="letter" id="w">w</p>
-				<p class="letter" id="x">x</p>
-				<p class="letter" id="y">y</p>
-				<p class="letter" id="z">z</p>
-			</div>
-		</div>
-	<div class="col-6">
-		<div class="hangman-container">
-			<div id="gallows-3" class="hide bot"></div>
-			<div id="robot" class="hide">
-				<div id="gallows-1" class="bot"></div>
-				<div id="gallows-2" class="bot"></div>
-				<div id="head" class="bot">
-					<img src="images/robot-head.png">
-				</div>
-				<div id="torso" class="bot">
-					<img src="images/robot-torso.png">
-				</div>
-				<div id="left-arm" class="bot">
-					<img src="images/robot-left-arm.png">
-				</div>
-				<div id="right-arm" class="bot">
-					<img src="images/robot-right-arm.png">
-				</div>
-				<div id="left-leg" class="bot">
-					<img src="images/robot-left-leg.png">
-				</div>
-				<div id="right-leg" class="bot">
-					<img src="images/robot-right-leg.png">
+		<div class="row">
+			<div class="col-6">
+				<!-- Letter buttons -->
+				<div class="letter-container">
+					<p class="letter" id="a">a</p>
+					<p class="letter" id="b">b</p>
+					<p class="letter" id="c">c</p>
+					<p class="letter" id="d">d</p>
+					<p class="letter" id="e">e</p>
+					<p class="letter" id="f">f</p>
+					<p class="letter" id="g">g</p>
+					<p class="letter" id="h">h</p>
+					<p class="letter" id="i">i</p>
+					<p class="letter" id="j">j</p>
+					<p class="letter" id="k">k</p>
+					<p class="letter" id="l">l</p>
+					<p class="letter" id="m">m</p>
+					<p class="letter" id="n">n</p>
+					<p class="letter" id="o">o</p>
+					<p class="letter" id="p">p</p>
+					<p class="letter" id="q">q</p>
+					<p class="letter" id="r">r</p>
+					<p class="letter" id="s">s</p>
+					<p class="letter" id="t">t</p>
+					<p class="letter" id="u">u</p>
+					<p class="letter" id="v">v</p>
+					<p class="letter" id="w">w</p>
+					<p class="letter" id="x">x</p>
+					<p class="letter" id="y">y</p>
+					<p class="letter" id="z">z</p>
 				</div>
 			</div>
+			<div class="col-6">
+				<!-- Container for the hangman -->
+				<div class="hangman-container">
+					<div id="gallows-3" class="hide bot"></div>
+					<div id="robot" class="hide">
+						<div id="gallows-1" class="bot"></div>
+						<div id="gallows-2" class="bot"></div>
+						<div id="head" class="bot">
+							<img src="images/robot-head.png">
+						</div>
+						<div id="torso" class="bot">
+							<img src="images/robot-torso.png">
+						</div>
+						<div id="left-arm" class="bot">
+							<img src="images/robot-left-arm.png">
+						</div>
+						<div id="right-arm" class="bot">
+							<img src="images/robot-right-arm.png">
+						</div>
+						<div id="left-leg" class="bot">
+							<img src="images/robot-left-leg.png">
+						</div>
+						<div id="right-leg" class="bot">
+							<img src="images/robot-right-leg.png">
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
+		<!-- Container displays either win or loss -->
+		<div class="result-container"></div>
+		<!-- Class that is added to letters when they are in the chosen word -->
+		<div id="isMatched"></div>
+		<button id="play-again">Play Again</button>
 	</div>
-</div>
-<div class="result-container"></div>
-<div id="isMatched"></div>
-<div id="difficulty"></div>
-<button id="play-again">Play Again</button>
-   </div>
 	
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>

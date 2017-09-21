@@ -35,6 +35,10 @@ p {
 	box-shadow:         7px 7px 5px 0px rgba(0, 0, 0, 0.75);
 }
 
+p:hover {
+	background-color: white;
+}
+
 .letter-container {
 	width: 500px;
 	height: 500px;
@@ -53,10 +57,6 @@ p {
 	margin-right: 10px;
 	background-color: rgba(255,255,255,0.5);
 	border-radius: 5px;
-}
-
-p:hover {
-	background-color: white;
 }
 
 .result-container {
@@ -159,7 +159,7 @@ img {
 }
 
 .match {
-
+	/*Empty class used to identify letters that are in the word*/
 }
 
 #title {
