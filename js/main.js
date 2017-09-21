@@ -36,7 +36,6 @@ $(function () {
 	//Function that runs the game
 	function game() {
 		title();
-		letterEvents();
 	}
 
 	$($gameDiv).hide();
@@ -277,18 +276,21 @@ $(function () {
 			chooseCategory();
 			getRandomWord(robotWords);
 			drawDashes(chosenWord);
+			letterEvents();
 		});
 
 		$($rtButton).click(function (event){
 			chooseCategory();
 			getRandomWord(robotTypes);
 			drawDashes(chosenWord);
+			letterEvents();
 		});
 
 		$($rcButton).click(function (event){
 			chooseCategory();
 			getRandomWord(robotCharacters);
 			drawDashes(chosenWord);
+			letterEvents();
 		});
 	}
 });
