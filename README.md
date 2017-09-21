@@ -9,7 +9,7 @@ This is the first project in the Sparta Global Tech Stream Course.
 
 ## Functionality
 This game is made up of one html page, although there are different div elements that are shown and hidden as appropriate.  
-There are also CSS and JavaScript files which pertain to the styling and logic respectively.  
+There are also CSS and JavaScript files which contain the styling and logic respectively.  
 The game will pick a random word based on the category chosen by the player, who then selects letters.  
 If the letter isn't in the word, then the hangman is drawn.
 There are three different levels, which have different time limits - easy has a time limit of 60 seconds, medium a limit of 30 seconds and hard a limit of 15 seconds . 
