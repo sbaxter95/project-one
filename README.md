@@ -31,13 +31,20 @@ These are the images that were used in the game:
     
 **Robot:** [https://commons.wikimedia.org/wiki/File:Schylling_%E2%80%93_Robot_2008_ME100_-_Front.jpg](https://commons.wikimedia.org/wiki/File:Schylling_%E2%80%93_Robot_2008_ME100_-_Front.jpg)  
 **Background Image:** [http://bsnscb.com/blue-yellow-abstract-wallpapers/27035802.html](http://bsnscb.com/blue-yellow-abstract-wallpapers/27035802.html)   
-**Robot Favicon:** [http://game-icons.net/lorc/originals/vintage-robot.html](http://game-icons.net/lorc/originals/vintage-robot.html)
+**Robot Favicon:** [http://game-icons.net/lorc/originals/vintage-robot.html](http://game-icons.net/lorc/originals/vintage-robot.html)  
+
+## Screenshots
+
 
 
 ## Usage
 #### Building and Running
-The git repo can be forked or cloned and the index.html file opened in a web browser. 
+The git repo can be forked or cloned and the index.html file opened in a web browser.  
+Additionally, play it [here](https://sbaxter95.github.io/project-one/)
 #### Customising
 To modify the HTML, change the index.html file, to modify the CSS or JavaScript, change the style.css and main.js files respectively.
+
+## License
+MIT License
 
 
