@@ -19,19 +19,33 @@ $(function () {
 
 	var chosenWord;
 
+	var $wordContainer = $('.word-container');
+	var $resultContainer = $('.result-container');
+	var $score = $('#score');
+	var $letterButtons = $('.letter');
+	var $timer = $('#timer');
+	var $titleDiv = $('#title');
+	var $gameDiv = $('.game');
+	var $easyButton = $('#easy');
+	var $mediumButton = $('#medium');
+	var $hardButton = $('#hard');
+	var $rwButton = $('#rw');
+	var $rtButton = $('#rt');
+	var $rcButton = $('#rc');
+
 	//Function that runs the game
 	function game() {
 		title();
 		letterEvents();
 	}
 
-	$('.game').hide();
+	$($gameDiv).hide();
 	game();
 
 	//Draws dashes for each letter of the chosen word
 	function drawDashes(chosenWord) {
 		for (var i = 0; i < chosenWord.length; i++) {
-			$('.word-container').append('<div class="blank"> _ </div>')
+			$($wordContainer).append('<div class="blank"> _ </div>')
 		}
 	}
 
@@ -63,11 +77,11 @@ $(function () {
 	    } 
 	    if (badGuesses === 9) {
 	    	$('#right-leg').addClass('show');
-	    	$('.result-container').html('You lost');
+	    	$($resultContainer).html('You lost');
 	    	clearInterval(timerInterval);
-	    	$('.letter').off('click');
+	    	$($letterButtons).off('click');
 	    	$(window).unbind('keydown');
-	    	$('.word-container').html(chosenWord);
+	    	$($wordContainer).html(chosenWord);
 	    	score = 0;
 	    	displayScore();
 	    }
@@ -77,8 +91,8 @@ $(function () {
 	function checkWinner() {
 		if ($('.match').length === chosenWord.length) {
 			clearInterval(timerInterval);
-			$('.result-container').html('You won!');
-			$('.letter').off('click');
+			$($resultContainer).html('You won!');
+			$($letterButtons).off('click');
 			$(window).unbind('keydown');
 			getScore();
 			displayScore();
@@ -100,7 +114,7 @@ $(function () {
 
 	//Logic when letter clicked on, and random hover colours 
 	function letterEvents() {
-		$('.letter').hover(function(){
+		$($letterButtons).hover(function(){
 	      var r = Math.floor(Math.random() * 255);
 	      var g = Math.floor(Math.random() * 255);
 	      var b = Math.floor(Math.random() * 255);
@@ -108,7 +122,7 @@ $(function () {
 	      $(this).css("background-color", color);
 	});
 
-	$('.letter').on('click', function (event) {
+	$($letterButtons).on('click', function (event) {
 		var $this = $(this)
 			$('p').unbind('mouseout');
 			if (chosenWord.includes(($this).attr('id'))) {
@@ -159,15 +173,15 @@ $(function () {
 	function countdown() {
 		if (timeRemaining === 0) {
 			clearTimeout(timeRemaining);
-			$('.result-container').html('You lost');
-	    	$('.letter').off('click');
-	    	$('.word-container').html(chosenWord);
+			$($resultContainer).html('You lost');
+	    	$($letterButtons).off('click');
+	    	$($wordContainer).html(chosenWord);
 	    	$(window).unbind('keydown');
 	    	score = 0;
 	    	displayScore();
 
 		} else {
-			$('#timer').html(timeRemaining + ' seconds remaining');
+			$($timer).html(timeRemaining + ' seconds remaining');
 			timeRemaining--;
 		}
 	}
@@ -186,7 +200,7 @@ $(function () {
 
 	//Displays the score on the page
 	function displayScore() {
-		$('#score').html('Score: ' + score);
+		$($score).html('Score: ' + score);
 	}
 
 	//Event listener for keyboard input
@@ -201,8 +215,8 @@ $(function () {
 		if (chosenWord.includes(letter)) {
 			for (var i = 0; i < chosenWord.length; i++) {
 				if (content === chosenWord[i]) {
-					$('.blank').eq(i).html(content);
-					$('.blank').eq(i).addClass('match');
+					$($('.blank')).eq(i).html(content);
+					$($('.blank')).eq(i).addClass('match');
 				}
 			}
 			checkWinner();
@@ -224,54 +238,54 @@ $(function () {
 	//Title Logic
 	function selectDifficulty() {
 		$('#header').html('Choose category');
-		$('#easy').hide();
-		$('#medium').hide();
-		$('#hard').hide();
-		$('#rw').removeClass('hide');
-		$('#rt').removeClass('hide');
-		$('#rc').removeClass('hide');
+		$($easyButton).hide();
+		$($mediumButton).hide();
+		$($hardButton).hide();
+		$($rwButton).removeClass('hide');
+		$($rtButton).removeClass('hide');
+		$($rcButton).removeClass('hide');
 	}
 
 	function chooseCategory() {
-		$('#title').hide();
-		$('#title').removeClass('show');
-		$('.game').removeClass('hide');
-		$('.game').show();
-		$('#title').hide();
+		$($titleDiv).hide();
+		$($titleDiv).removeClass('show');
+		$($gameDiv).removeClass('hide');
+		$($gameDiv).show();
+		$($titleDiv).hide();
 	}
 
 	function title() {
-		$('#easy').click(function (event){
+		$($easyButton).click(function (event){
 		difficulty = 'easy';
 		selectDifficulty();
 		getTimer();
 		});
 
-		$('#medium').click(function (event){
+		$($mediumButton).click(function (event){
 			difficulty = 'medium';
 			selectDifficulty();
 			getTimer();
 		});
 
-		$('#hard').click(function (event){
+		$($hardButton).click(function (event){
 			difficulty = 'hard';
 			selectDifficulty();
 			getTimer();
 		});
 
-		$('#rw').click(function (event){
+		$($rwButton).click(function (event){
 			chooseCategory();
 			getRandomWord(robotWords);
 			drawDashes(chosenWord);
 		});
 
-		$('#rt').click(function (event){
+		$($rtButton).click(function (event){
 			chooseCategory();
 			getRandomWord(robotTypes);
 			drawDashes(chosenWord);
 		});
 
-		$('#rc').click(function (event){
+		$($rcButton).click(function (event){
 			chooseCategory();
 			getRandomWord(robotCharacters);
 			drawDashes(chosenWord);
