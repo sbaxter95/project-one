@@ -111,25 +111,25 @@ $(function () {
 
 	$('.letter').on('click', function (event) {
 		var $this = $(this)
-		$('p').unbind('mouseout');
-		if (chosenWord.includes(($this).attr('id'))) {
-			for (var i = 0; i < chosenWord.length; i++) {
-				var content = $this.attr('id');
-				if (content === chosenWord[i]) {
-					$('.blank').eq(i).html(content);
-					$('.blank').eq(i).addClass('match');
-					$this.addClass('right-letter');
-					$this.fadeOut(1000);
+			$('p').unbind('mouseout');
+			if (chosenWord.includes(($this).attr('id'))) {
+				for (var i = 0; i < chosenWord.length; i++) {
+					var content = $this.attr('id');
+					if (content === chosenWord[i]) {
+						$('.blank').eq(i).html(content);
+						$('.blank').eq(i).addClass('match');
+						$this.addClass('right-letter');
+						$this.fadeOut(1000);
+					}
 				}
+				checkWinner();
+			} else {
+				$(this).addClass('wrong-letter');
+				$(this).fadeOut(1000);
+				wrongLetter();
 			}
-			checkWinner();
-		} else {
-			$(this).addClass('wrong-letter');
-			$(this).fadeOut(1000);
-			wrongLetter();
-		}
 
-	});
+		});
 	}
 
 
@@ -214,6 +214,11 @@ $(function () {
 
 	//Removes corresponding button from the page when key is pressed
 	function removeKey(letter) {
+		var r = Math.floor(Math.random() * 255);
+		var g = Math.floor(Math.random() * 255);
+		var b = Math.floor(Math.random() * 255);
+		var color = "rgb("+r+","+g+","+b+")"
+		$(this).css("background-color", color);
 		$('.letter-container').find('#' + letter).fadeOut(1000);
 	}
 
